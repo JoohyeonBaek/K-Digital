@@ -23,20 +23,20 @@ class Circle {
 }
 
 public class BaekJooHyeon_20201216_Circle {
-	public static double distancePointToPoint(Point point1, Point point2) {	// ¿øÁ¡°£ °Å¸® °è»ê ¸Ş¼Òµå
+	public static double distancePointToPoint(Point point1, Point point2) {	// ì›ì ê°„ ê±°ë¦¬ ê³„ì‚° ë©”ì†Œë“œ
 		double distance = Math.sqrt(Math.pow(point1.x - point2.x, 2) + Math.pow(point1.y - point2.y, 2));
 		return distance;		
 	}
 	
-	public static boolean isCircleCrush(Circle circle1, Circle circle2) {	// ¿ø Ãæµ¹ È®ÀÎ ¸Ş¼Òµå
+	public static boolean isCircleCrush(Circle circle1, Circle circle2) {	// ì› ì¶©ëŒ í™•ì¸ ë©”ì†Œë“œ
 		double distancePointToPoint = distancePointToPoint(circle1.point, circle2.point);
 		double sumRadius = circle1.radius + circle2.radius;
 		
-		if(circle1.point.x == circle2.point.x && circle1.point.y == circle2.point.y && circle1.radius != circle2.radius)	// µÎ ¿øÀÇ ¿øÁ¡ÀÌ °°°í ¹İÁö¸§ÀÌ ´Ù¸¦ ¶§
+		if(circle1.point.x == circle2.point.x && circle1.point.y == circle2.point.y && circle1.radius != circle2.radius)	// ë‘ ì›ì˜ ì›ì ì´ ê°™ê³  ë°˜ì§€ë¦„ì´ ë‹¤ë¥¼ ë•Œ
 			return false;
-		else if(distancePointToPoint > sumRadius)	// ¿øÁ¡°£ÀÇ °Å¸®°¡ °¢ ¹İÁö¸§ÀÇ ±æÀÌÀÇ ÇÕº¸´Ù Å¬ ¶§
+		else if(distancePointToPoint > sumRadius)	// ì›ì ê°„ì˜ ê±°ë¦¬ê°€ ê° ë°˜ì§€ë¦„ì˜ ê¸¸ì´ì˜ í•©ë³´ë‹¤ í´ ë•Œ
 			return false;
-		else				// ¿øÁ¡°£ÀÇ °Å¸®°¡ °¢ ¹İÁö¸§ÀÇ ±æÀÌÀÇ ÇÕº¸´Ù ÀÛ°Å³ª °°À» ¶§
+		else				// ì›ì ê°„ì˜ ê±°ë¦¬ê°€ ê° ë°˜ì§€ë¦„ì˜ ê¸¸ì´ì˜ í•©ë³´ë‹¤ ì‘ê±°ë‚˜ ê°™ì„ ë•Œ
 			return true;		
 	}
 	
@@ -46,19 +46,19 @@ public class BaekJooHyeon_20201216_Circle {
 		Circle[] circleArr = new Circle[2];
 		
 		for(int i=0; i<=1; i++) {
-			System.out.print("¿øÀÇ Áß½É (x,y)À» ÀÔ·ÂÇÏ¼¼¿ä :");
+			System.out.print("ì›ì˜ ì¤‘ì‹¬ (x,y)ì„ ì…ë ¥í•˜ì„¸ìš” :");
 			double x = sc.nextDouble();
 			double y = sc.nextDouble();
 			pointArr[i] = new Point(x,y);
 			
-			System.out.print("¹İÁö¸§À» ÀÔ·ÂÇÏ¼¼¿ä :");
+			System.out.print("ë°˜ì§€ë¦„ì„ ì…ë ¥í•˜ì„¸ìš” :");
 			double radius = sc.nextDouble();
 			circleArr[i] = new Circle(pointArr[i], radius);			
 		}
 		
 		if(isCircleCrush(circleArr[0],circleArr[1]))
-			System.out.println("µÎ ¿øÀº Ãæµ¹Çß½À´Ï´Ù.");
+			System.out.println("ë‘ ì›ì€ ì¶©ëŒí–ˆìŠµë‹ˆë‹¤.");
 		else
-			System.out.println("µÎ ¿øÀº Ãæµ¹ÇÏÁö ¾Ê¾Ò½À´Ï´Ù.");				
+			System.out.println("ë‘ ì›ì€ ì¶©ëŒí•˜ì§€ ì•Šì•˜ìŠµë‹ˆë‹¤.");				
 	}
 }
