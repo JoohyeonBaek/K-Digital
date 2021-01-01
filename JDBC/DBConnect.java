@@ -2,15 +2,15 @@ package usunmoon;
 import java.sql.Connection;
 import java.sql.DriverManager;
 
-public class DBConnect_20201231 {
+public class {
 	private Connection conn;
 	
-	public DBConnect_20201231() {
+	public DBConnect() {
 		try {
 			Class.forName("org.mariadb.jdbc.Driver");
 			String url = "jdbc:mariadb://127.0.0.1:3306/sungjuk_test";
 			conn = DriverManager.getConnection(url,"root","*****");
-			System.out.println("Maria DB °¡ Á¤»óÀûÀ¸·Î ¿¬°áµÇ¾ú½À´Ï´Ù.");
+			System.out.println("Maria DB ê°€ ì •ìƒì ìœ¼ë¡œ ì—°ê²°ë˜ì—ˆìŠµë‹ˆë‹¤.");
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
