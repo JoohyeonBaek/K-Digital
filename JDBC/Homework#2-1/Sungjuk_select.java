@@ -1,11 +1,11 @@
 package usunmoon;
 import java.sql.*;
-
+import tsunmoon.DBConnect;
 import java.util.Scanner;
 public class Sungjuk_select {
 
    public static void main(String[] args) {
-      Connection conn = new DBConnect_20201231().getConn();
+      Connection conn = new DBConnect().getConn();
       Scanner sc = new Scanner(System.in);
       CallableStatement stmt = null;
       System.out.println("검색할 번호와 이름을 입력하세요");

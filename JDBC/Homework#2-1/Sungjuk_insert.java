@@ -1,14 +1,13 @@
 package usunmoon;
 import java.sql.Connection;
 import java.sql.CallableStatement;
-
 import java.util.Scanner;
+import tsunmoon.DBConnect;
 
 
 public class Sungjuk_insert {
-
    public static void main(String[] args) {
-      Connection conn = new DBConnect_20201231().getConn();
+	  Connection conn = new DBConnect().getConn();
       CallableStatement stmt = null;
       
       Scanner sc = new Scanner(System.in);

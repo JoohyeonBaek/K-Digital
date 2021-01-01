@@ -1,10 +1,11 @@
 package usunmoon;
 import java.sql.*;
+import tsunmoon.DBConnect;
 
 public class Sungjuk_print {
 
 	public static void main(String[] args) {
-		Connection con = new DBConnect_20201231().getConn();
+		Connection con = new DBConnect().getConn();
 		CallableStatement stmt = null;
 		
 		try {
