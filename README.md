@@ -5,4 +5,5 @@
 * JAVA
 * DB
   * MariaDB
+  * HeidiSQL
   * JDBC
