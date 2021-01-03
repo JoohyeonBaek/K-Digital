@@ -3,8 +3,8 @@
 20.12.10 ~ 21.05.06
 
 * JAVA
- * eclipse
+  * eclipse
 * DB
- * MariaDB
- * HeidiSQL
- * JDBC
+  * MariaDB
+  * HeidiSQL
+  * JDBC
