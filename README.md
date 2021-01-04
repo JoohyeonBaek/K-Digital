@@ -9,3 +9,4 @@
   * MariaDB
   * HeidiSQL
   * JDBC
+* JSP
