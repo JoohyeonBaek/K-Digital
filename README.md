@@ -10,3 +10,6 @@
   * HeidiSQL
   * JDBC
 * JSP
+  * HTML
+  * CSS
+  *JavaScript
