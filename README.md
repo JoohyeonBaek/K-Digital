@@ -12,4 +12,4 @@
 * JSP
   * HTML
   * CSS
-  *JavaScript
+  * JavaScript
