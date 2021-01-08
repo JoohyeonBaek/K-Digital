@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>07_animaition</title>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script>
+    $(document).ready(function() {
+        $("#1").click(function() {
+            var div = $("div");
+            div.animate({width: '300px' , opacity:'0.4'},"slow");   // 객체로 전달 {} 자바스크립트에ㅓ는 객체 - 여러개의 속성 변경
+            div.animate({height: '300px' , opacity:'0.8'},"slow");
+            div.animate({height: '100px' , opacity:'0.4'},"slow");
+            div.animate({width: '100px' , opacity:'0.8'},"slow");
+        })
+    })
+</script>
+</head>
+<body>
+    <button id="1">애니메이션을 하려면 클릭</button>
+    <p>static posiotion, 상대좌표:relative 절대좌표:absolute, fixed!</p>
+    <div style="background: #98bf12; height: 100px; width: 100px; position: absolute;"></div>
+</body>
+</html>

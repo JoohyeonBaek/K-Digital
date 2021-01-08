@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>08_table_insert</title>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script>
+$(document).ready(function(){
+   $("#btn1").on("click", function(e){     // on함수 : 이벤트를 붙여줌
+      if($(":radio[name=rdo]:checked").length==0) {
+         alert("추가될 위치를 선택하세요");
+         return;
+      }
+      var idx = $(":radio[name=rdo]").index($(":radio[name=rdo]:checked"));     // :radio가 radio보다 범위가 넓음
+      
+      var userNameObj = $(":text[name=userName]");
+      var userCityObj = $(":text[name=userCity]");
+      var userAgeObj = $(":text[name=userAge]");
+      var userName = userNameObj.val();
+      var userCity = userCityObj.val();
+      var userAge = userAgeObj.val();
+      
+      var trHtml = "<tr><td><input type='radio' name = 'rdo'></td>" +
+      "<td>" +userName + "</td><td>" + userCity + "</td><td>" + userAge + "</td></tr>";
+      $(trHtml).insertAfter("#table1 tbody tr:eq("+idx+")");
+      $(":radio").prop("checked", false);
+      userNameObj.val("");
+      userCityObj.val("");
+      userAgeObj.val("");
+   });
+});
+</script>
+</head>
+<body>
+   <form name="form1">
+      <table width="400" id="table1">
+         <thead>
+            <tr>
+               <td></td>
+               <td>이름</td>
+               <td>지역</td>
+               <td>나이</td>
+            </tr>
+            <tr>
+               <td><input type="button" id="btn1" value="추가"></td>
+               <td><input type="text" id="text" name="userName"></td>
+               <td><input type="text" id="text" name="userCity"></td>
+               <td><input type="text" id="text" name="userAge"></td>
+            </tr>
+         </thead>
+         <tbody>
+            <tr>
+               <td><input type="radio" name="rdo"></td>
+               <td>대한이</td>
+               <td>서울</td>
+               <td>32</td>
+            </tr>
+            <tr>
+               <td><input type="radio" name="rdo"></td>
+               <td>민국이</td>
+               <td>대전</td>
+               <td>35</td>
+            </tr>
+         </tbody>
+      </table>
+   </form>
+</body>
+</html>

@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>03_this</title>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<style>
+    div {
+        width: 70px;
+        height: 50px;
+        float: left;
+        margin: 5px;
+        background: red;
+    }
+    .next {background: blue;}
+</style>
+</head>
+<body>
+    <div>1</div>
+    <div>2</div>
+    <div>3</div>
+    <div>4</div>
+    <div>5</div>
+    <script>
+        $(document).ready(function(){
+            var modWidth = 100;
+            $("div").click(function() {
+                $(this).width(modWidth).addClass("next");
+                modWidth -=2;
+            })
+        })
+    </script>
+</body>
+</html>

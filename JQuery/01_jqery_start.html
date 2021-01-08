@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>01_jquery</title>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script type="text/javascript">
+	$(document).ready(function() {
+		$("#text").click(function() {
+			alert($("#target").text());
+		})
+		$("#html").click(function() {
+			alert($("target").html());
+		})
+		$("#text2").click(function() {
+			alert($("#target2").val());
+		})
+	})
+</script>
+	<p id=target>이것은 <strong>하나의</strong>단락입니다.</p>
+	<button id="text">text()</button>
+	<button id="html">html()</button>
+	이름:<input type="text" id="target2" value=""><br />
+	<button id="text2">val()</button> 
+</head>
+<body>
+
+</body>
+</html>

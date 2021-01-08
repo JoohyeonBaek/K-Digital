@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>04_css</title>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<style>
+    div{width: 60px; height: 60px;}
+</style>
+<script>
+    $(document).ready(function() {
+        $("#button1").click(function() {
+            var color = $("#div1").css("background-color");
+            $("#result").text("background-color: " + color);
+        })
+
+        $("#button2").click(function() {
+            $("div1").css("background-color","red")
+        })
+    })
+</script>
+</head>
+<body>
+    <div id="div1" style="background-color: blue;"></div>
+    <button id="button1">css(속성) 값획득 : get</button>
+    <button id = "button2">css(속성)값 세팅</button>
+    <p id="result">여기에 결과가 표시됩니다.</p>
+</body>
+</html>

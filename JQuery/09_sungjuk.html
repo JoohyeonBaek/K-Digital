@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>09_sungjuk</title>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script>
+$(document).ready(function(){
+   $("#btn1").on("click", function(e){
+      if($(":radio[name=rdo]:checked").length==0) {
+         alert("추가될 위치를 선택하세요");
+         return;
+      }
+      var idx = $(":radio[name=rdo]").index($(":radio[name=rdo]:checked"));
+      
+      $.fn.val2 = function() {
+          var temp = $(this).val();
+          if(temp=="") {temp = 0;}
+          return parseInt(temp,10);
+      }
+      
+      var userNameObj = $(":text[name=userName]");
+      var userKorObj = $(":text[name=userKor]");
+      var userEngObj = $(":text[name=userEng]");
+      var userMathObj = $(":text[name=userMath]");
+      var userName = userNameObj.val();
+      var userKor = userKorObj.val2();
+      var userEng = userEngObj.val2();
+      var userMath = userMathObj.val2();
+      
+      
+    
+      var userSum = userKor + userEng + userMath;  
+      var userAvg = userSum / 3.0;
+
+
+      
+      var trHtml = "<tr><td><input type='radio' name = 'rdo'></td>" +
+      "<td>" +userName + "</td><td>" + userKor + "</td><td>" + userEng + "</td><td>" + userMath + "</td><td>" + userSum + "</td><td>" + userAvg +"</td></tr>";
+      $(trHtml).insertAfter("#table1 tbody tr:eq("+idx+")");
+      $(":radio").prop("checked", false);
+      userNameObj.val("");
+      userKorObj.val("");
+      userEngObj.val("");
+      userMathObj.val("");
+      
+
+   });
+});
+</script>
+
+</head>
+<body>
+   <form name="form1">
+      <table width="400" id="table1">
+         <thead>
+            <tr>
+               <td></td>
+               <td>이름</td>
+               <td>국어</td>
+               <td>영어</td>
+               <td>수학</td>
+               <td>합계</td>
+               <td>평균</td>
+            </tr>
+            <tr>
+               <td><input type="button" id="btn1" value="추가"></td>
+               <td><input type="text" id="text" name="userName"></td>
+               <td><input type="text" id="text" name="userKor"></td>
+               <td><input type="text" id="text" name="userEng"></td>
+               <td><input type="text" id="text" name="userMath"></td>
+            </tr>
+         </thead>
+         <tbody>
+            <tr>
+               <td><input type="radio" name="rdo"></td>
+               <td>대한이</td>
+               <td>100</td>
+               <td>100</td>
+               <td>100</td>
+               <td>300</td>
+               <td>100</td>
+            </tr>            
+         </tbody>
+      </table>
+   </form>
+</body>
+</html>

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>06_mouseevent</title>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<style>
+    div.out {
+        width: 200px;
+        height: 60px;
+        background-color: yellow;
+    }
+    body {background-color: #eef;}
+    div {padding: 20px;}
+</style>
+</head>
+<body>
+    <div id="Log"></div>
+    <div class="out">
+        <p>마우스를 여기로 움직이세요.</p>
+        <p>0</p>
+    </div>
+    <script>
+        var i = 0;
+        $("div.out").mouseover(function() {
+            $("p:first", this).text("mouse over");
+            $("p:last", this).text(++i);
+        })
+
+        $(document).mouseover(function(e) {
+            $("#Log").text("e.pageX: " + e.pageX + ", e.pageY: " + e.pageY);
+        })
+    </script>
+</body>
+</html>
