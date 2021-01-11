@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style>
+	h1, h2, form{
+		text-align: center;
+	}
+</style>
+
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</head>
+<body>
+	<h1>당신의 MBTI는?</h1>
+	
+	<form method="post" action="./15_research_rec.jsp">
+		이름을 입력하세요<br>
+		<input type="text" name="name">
+		<br><br>
+		MBTI 유형을 선택하세요<br>
+		<input type="radio" Name="answer" id="ISTJ" value="0"><label for="ISTJ">ISTJ</label>
+		<input type="radio" Name="answer" id="ISFJ" value="1"><label for="ISFJ">ISFJ</label>
+		<input type="radio" Name="answer" id="INFJ" value="2"><label for="INFJ">INFJ</label>
+		<input type="radio" Name="answer" id="INTJ" value="3"><label for="INTJ">INTJ</label>
+		<br>
+		<input type="radio" Name="answer" id="ISTP" value="4"><label for="ISTP">ISTP</label>
+		<input type="radio" Name="answer" id="ISFP" value="5"><label for="ISFP">ISFP</label>
+		<input type="radio" Name="answer" id="INFP" value="6"><label for="INFP">INFP</label>
+		<input type="radio" Name="answer" id="INTP" value="7"><label for="INTP">INTP</label>
+		<br>
+		<input type="radio" Name="answer" id="ESTP" value="8"><label for="ESTP">ESTP</label>
+		<input type="radio" Name="answer" id="ESFP" value="9"><label for="ESFP">ESFP</label>
+		<input type="radio" Name="answer" id="ENFP" value="10"><label for="ENFP">ENFP</label>
+		<input type="radio" Name="answer" id="ENTP" value="11"><label for="ENTP">ENTP</label>
+		<br>
+		<input type="radio" Name="answer" id="ESTJ" value="12"><label for="ESTJ">ESTJ</label>
+		<input type="radio" Name="answer" id="ESFJ" value="13"><label for="ESFJ">ESFJ</label>
+		<input type="radio" Name="answer" id="ENFJ" value="14"><label for="ENFJ">ENFJ</label>
+		<input type="radio" Name="answer" id="ENTJ" value="15"><label for="ENTJ">ENTJ</label>				
+		<br><br>
+		
+		<button type="submit" class = "btn btn-outline-primary">제출</button>
+		
+	</form>
+</body>
+</html>
