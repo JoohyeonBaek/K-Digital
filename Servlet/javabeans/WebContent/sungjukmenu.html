@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Insert title here</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>jQuery UI Accordion - Default functionality</title>
+<link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+<link rel="stylesheet" href="/resources/demos/style.css">
+<script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+
+
+
+<script>
+	$(function() {
+		$("#accordion").accordion();
+	});
+</script>
+</head>
+<body>
+	<h1 style="text-align: center;">Student 테이블 조작하기</h1>
+	<ul>
+		<li><a href="">학습을 위하여 </a></li>
+		<li><a href="">JDBC</a></li>
+	</ul>
+
+	<div id="accordion">
+		<h3>리스트</h3>
+		<div>
+			<center>
+				<p>
+				<form method="get" action="selectProcess">
+					<input type="submit" value="회원보기" />
+				</form>
+				</p>
+			</center>
+		</div>
+		<h3>입력</h3>
+		<div>
+			<p>
+			<center>
+				<form method="post" action="insertProcess">
+					<table width="40%" border="1">
+						<caption>
+							<h3>회 원 가 입 !</h3>
+						</caption>
+						<tr>
+							<th width="30%">이름</th>
+							<td width="70%" align="center">
+								<input type="text" name="name" size="27%" />
+							</td>
+						</tr>
+						<tr>
+							<th width="30%">국어</th>
+							<td width="70%" align="center">
+								<input type="text" name="kor" size="27%" />
+							</td>
+						</tr>
+						<tr>
+							<th width="30%">수학</th>
+							<td width="70%" align="center">
+								<input type="text" name="mat" size="27%" />
+							</td>
+						</tr>
+						<tr>
+							<th width="30%">영어</th>
+							<td width="70%" align="center">
+								<input type="text" name="eng" size="27%" />
+							</td>
+						</tr>
+						<tr>
+							<th width="30%">학교코드</th>
+							<td width="70%" align="center">
+								<input type="text" name="schoolcode" size="27%" />
+							</td>
+						</tr>
+
+					</table>
+					<br />
+					<table width="40%">
+						<tr>
+							<td align="right">
+								<input type="submit" value="회원가입" />
+							</td>
+						</tr>
+					</table>
+				</form>
+			</center>
+			</p>
+		</div>
+
+
+
+		<h3>수정</h3>
+		<div>
+			<center>
+				<form method="post" action="updateProcess">
+					<table width="40%" border="1">
+						<caption>
+							<h3>회 원 정 보 수 정 !</h3>
+						</caption>
+
+						<tr>
+							<th width="30%">번호</th>
+							<td width="70%" align="center">
+								<input type="text" name="bunho" size="27%" />
+							</td>
+						</tr>
+						<tr>
+							<th width="30%">이름</th>
+							<td width="70%" align="center">
+								<input type="text" name="name" size="27%" />
+							</td>
+						</tr>
+						<tr>
+							<th width="30%">국어</th>
+							<td width="70%" align="center">
+								<input type="text" name="kor" size="27%" />
+							</td>
+						</tr>
+						<tr>
+							<th width="30%">수학</th>
+							<td width="70%" align="center">
+								<input type="text" name="mat" size="27%" />
+							</td>
+						</tr>
+						<tr>
+							<th width="30%">영어</th>
+							<td width="70%" align="center">
+								<input type="text" name="eng" size="27%" />
+							</td>
+						</tr>
+
+					</table>
+					<br> <br> <input type="submit" value="변경">
+				</form>
+			</center>
+		</div>
+
+
+		<h3>삭제</h3>
+		<div>
+			<center>
+				<form method="post" action="deleteProcess">
+					삭제할 학생번호 <input type="text" name="bunho"> <input type="submit" value="삭제">
+				</form>
+			</center>
+		</div>
+
+	</div>
+
+</body>
+</html>
