@@ -15,3 +15,4 @@
   * JavaScript
   * jQuery
   * Servlet
+* Python
