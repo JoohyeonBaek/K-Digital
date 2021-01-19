@@ -1,0 +1,38 @@
+import random
+gameCount = 0   # 전체 게임 수
+winCount = 0        # 승리 횟수
+gameCountSum = 0    # 각 게임당 선책 횟수 합
+
+while(1):
+    thisGameCount = 0   # 현재 게임 선택 수    
+    
+    
+    gameStart = int(input("게임중지 : 0 , 게임진행 1"))
+    if gameStart==0 :
+        if(gameCount==0):
+            print("한판도 하지 않았습니다")
+            break
+        else :
+            print(gameCount,"전",winCount,"승")
+            print("평균 선택 회수", gameCountSum / gameCount)
+            break
+    
+    else:
+        gameCount+=1
+        print("========== GAME",gameCount,"==========")
+        ran = random.randint(0,101)
+        while (thisGameCount <= 10):        
+            num = int(input("1~100사이 숫자를 입력하세요"))
+            thisGameCount += 1
+
+            if(num==ran):
+                print("정답입니다")
+                winCount += 1
+                break
+            else:
+                if(num>ran):
+                    print(num,"보다 작습니다")                
+                else:
+                    print(num,"보다 큽니다") 
+                    
+        gameCountSum += thisGameCount
