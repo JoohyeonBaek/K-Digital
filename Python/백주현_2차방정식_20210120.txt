@@ -1,0 +1,20 @@
+import math
+
+def getX(a,b,c):
+    discriminant = math.pow(b,2)-(4*a*c)
+    if discriminant > 0:
+        return ((-1*b) + discriminant ) / (2*a), ((-1*b) - discriminant ) / (2*a) 
+    elif discriminant == 0:
+        return  (-1*b) / (2*a)
+    else:
+        return "근이 존재하지 않습니다"
+
+
+# y = ax^2 + by + c
+print("ax+by=c")
+a = int(input("a = "))
+b = int(input("b = "))
+c = int(input("c = "))
+
+print(getX(a,b,c))
+
