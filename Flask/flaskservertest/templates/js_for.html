@@ -1,0 +1,50 @@
+{% extends "base.html" %}
+{%  block explain_contents %}
+
+<p id="demo"></p>
+<p id="datedisplay"> </p>
+<button onclick="displayDate()"> 시간을 알려주오!</button>
+
+<script language="JavaScript">
+function displayDate(){
+    document.getElementById("datedisplay").innerHTML=Date();
+}
+
+var person = {firstName:"하", lastName:"면돼", age:35, eyeColor:"blue"};
+
+document.getElementById("demo").innerHTML =
+person.firstName + " is " + person.age + " years old.";
+
+
+  Back = new Array("{{ url_for('static', filename='1.jpg')}}" ,"{{ url_for('static', filename='2.jpg')}}",
+              "{{ url_for('static', filename='3.jpg')}}", "{{ url_for('static', filename='4.jpg')}}", "{{ url_for('static', filename='Photo.jpg')}}");
+  index = Math.floor(Math.random() * 5);
+
+  document.write("<body background=" + Back[index] + ">");
+  document.write("<b>접속할 때 마다 다른 그림이 나타나게 하기...!<br>");
+  document.write("새로고침을 여러번 해보세요....!");
+    sum = 0; for (i=1; i<=10 ; i++ )  sum += i;  //sum=sum+1
+   document.write("1부터 10까지의 합은 : " + sum );
+    sum = 0; for (i=1; i<=10 ; i += 2)  sum += i; 
+   document.write("<br> 1부터 10까지의 홀수합은 : " + sum);
+   sum = 0;
+ for (i=1; i<=10 ; i++ )  {
+     if (i % 2 == 0)   sum += i;  }
+   document.write("<br>1부터 10까지의 짝수의 합은 : " + sum );
+  sum = 0;
+ for (i=1; i<=50 ; i++ )  { 
+     if (i % 5 != 0)  sum += i; 
+   }
+   document.write("<br>1부터 50까지의 합은 (5의 배수제외) : " + sum );
+
+   for(dan=1; dan <= 9; dan++)  {     
+   if(dan % 3 == 1) document.write("<tr>");
+       document.write("<td>");
+       for(i=1; i <= 9; i++)  
+         document.write(dan + " * " + i + " = " + (dan * i) +"<br>");
+       document.write("</td> ");
+      if (dan % 3 == 0) document.write("</tr>");    
+   }
+
+</script>
+{%  endblock explain_contents %} 

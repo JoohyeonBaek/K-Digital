@@ -1,0 +1,45 @@
+{% extends "base.html" %}
+{% block explain_contents %}
+<CENTER>
+    <b>테이블연습</b>
+    <table border="10" bordercolor="green" cellpadding="20" cellspacing="10" width="300" height="200" bgcolor="magenta">
+
+        <tr>
+            <td align="center" valign="center" background="b2.gif">
+                <img src="{{ url_for('static', filename='Photo.jpg')}}" width="200" height="150" border="3">
+            </td>
+
+        </tr>
+    </table>
+    <hr>
+    <table border="2" width="400" bordercolor="#ff0off" cellspacing="0">
+        <tr align="center">
+            <td> &nbsp;</td>
+            <td width="300"> &nbsp;</td>
+            <td> &nbsp;</td>
+
+        </tr>
+        <tr align="center">
+            <td> &nbsp;</td>
+            <td>
+                <table border="2" width="300" cellspacing="0">
+                    <tr align="center">
+                        <td>안쪽 표1</td>
+                        <td>안쪽 표2</td>
+                    </tr>
+                    <tr align="center">
+                        <td>안쪽 표3</td>
+                        <td>안쪽 표4</td>
+                    </tr>
+                    <tr align="center">
+                        <td>안쪽 표5</td>
+                        <td>안쪽 표6</td>
+                    </tr>
+                </table>
+            </td>
+            <td> &nbsp;</td>
+
+        </tr>
+    </table>
+</CENTER>
+{% endblock explain_contents %}
