@@ -1,0 +1,34 @@
+{% extends "base.html" %}
+
+
+{% block explain_contents %}
+<style>
+    table {
+        text-align: center
+    }
+
+</style>
+
+<center>
+    <h1>서울 구매 총액</h1>
+    <br><br>
+    <table class="table">
+        <thead>
+        <tr>
+            <th>주소</th>
+            <th>판매총액</th>
+        </tr>
+        </thead>
+        <tbody>
+        {% for seoul in object_list %}
+        <tr>
+            <td>{{seoul[0]}}</td>
+            <td>{{seoul[1]}}</td>
+        </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+</center>
+
+
+{% endblock explain_contents %}

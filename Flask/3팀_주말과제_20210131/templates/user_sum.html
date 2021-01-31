@@ -1,0 +1,48 @@
+{% extends "base.html" %}
+{% block header %}
+<head>
+    <title>Bootstrap Example</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</head>
+{% endblock header %}
+
+{% block explain_contents %}
+<style>
+    table {
+        text-align: center
+    }
+
+</style>
+<center>
+    <h1> User별 지출</h1>
+    <br><br>
+    <table class="table">
+        <thead>
+        <tr>
+            <th>이름</th>
+            <th>지출 값</th>
+            <th>지출 수량</th>
+        </tr>
+        </thead>
+        <tbody>
+        {% for user in object_list %}
+        <tr>
+            <td>{{user[0]}}</td>
+            <td>{{user[1]}}</td>
+            <td>{{user[2]}}</td>
+
+        </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+
+</center>
+
+
+{% endblock explain_contents %}

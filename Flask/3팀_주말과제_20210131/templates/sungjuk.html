@@ -1,0 +1,158 @@
+{% extends "base.html" %}
+{% block header %}
+<script>
+ $(document).ready(function(){
+  $('#insertBtn').click(function(){
+  $.ajax({
+   url : '{{url_for("sungjukAct")}}',
+   type : 'POST',
+   data : $('#myform').serialize(),
+   success : function(res){
+    let data = JSON.parse(res);
+    if(data.rows>0){
+     alert('입력완료');
+     location.reload();
+    }
+    else{
+     alert("실패")
+    }
+   }
+  });
+  });
+ });
+
+</script>
+{% endblock header %}
+
+{% block explain_contents %}
+
+<style>
+    table {
+        text-align: center
+    }
+
+</style>
+
+<center>
+    <h2> 성적 테이블 </h2>
+    <br>
+
+    <table>
+        <form name="myform" id="myform">
+            <tr>
+                <td> 이름 : <input type="text" id="name1" name="name1" size="10"></td>
+                <td> 국어 : <input type="text" id="kor1" name="kor1" size="10"></td>
+                <td> 수학 : <input type="text" id="mat1" name="mat1" size="10"></td>
+                <td> 영어 : <input type="text" id="eng1" name="eng1" size="10"></td>
+                <td><input type="hidden" id="id1" name="id5" size="10"></td>
+                <td>
+                    <button type="button" class="btn btn-primary" id="insertBtn"> 성적등록</button>
+                </td>
+            </tr>
+        </form>
+    </table>
+    <br>
+
+    <table class="table">
+        <thead>
+        <tr>
+            <th>번호</th>
+            <th>이름</th>
+            <th>국어</th>
+            <th>수학</th>
+            <th>영어</th>
+            <th>총점</th>
+            <th>평균</th>
+            <th>편집</th>
+            <th>삭제</th>
+        </tr>
+        </thead>
+        <tbody>
+        {% for sungjuk in object_list %}
+        <tr>
+            <td>{{sungjuk[0]}}</td>
+            <td>{{sungjuk[1]}}</td>
+            <td>{{sungjuk[2]}}</td>
+            <td>{{sungjuk[3]}}</td>
+            <td>{{sungjuk[4]}}</td>
+            <td>{{sungjuk[5]}}</td>
+            <td>{{sungjuk[6]}}</td>
+            <td>
+                <button type="button" class="btn btn-primary" id="updateBtn{{sungjuk[0]}}" name='{{sungjuk[0]}}'>성적수정
+                </button>
+            </td>
+            <script>
+                $('#updateBtn{{sungjuk[0]}}').click(function(){
+                    $('#id1').val($(this).attr("name"));
+                    $.ajax({
+                        url: "{{url_for('sungjukAct')}}",
+                        type:'put',
+                        data: $('#myform').serialize(),
+                        success: function(res){
+                            let data=JSON.parse(res);
+                            if(data.rows==0){
+                                alert('수정완료');
+                                location.reload();
+                            }
+                            else {
+                                alert('실패');
+                            }
+                        }
+                    });
+                });
+
+            </script>
+            <td>
+                <button type="button" class="btn btn-primary" id="deleteBtn{{sungjuk[0]}}" title='성적'
+                        name='{{sungjuk[1]}}'>성적삭제
+                </button>
+            </td>
+            <script>
+                $('#deleteBtn{{sungjuk[0]}}').click(function(){
+                   if(confirm($(this).attr('name') + "데이터를 삭제 하시겠습니까")){
+                        $.ajax({
+                            url : "{{url_for('sungjukAct')}}",
+                            type: "delete",
+                            data: { id:$(this).attr("name")},
+                            success: function(res) {
+                                let data = JSON.parse(res);
+                                if(data.rows==0) {
+                                    alert('삭제완료');
+                                    location.reload();
+                                }
+                                else{
+                                    alert('실패');
+                                }
+                            }
+                        });
+                   }
+                });
+
+            </script>
+        </tr>
+        {% endfor %}
+
+
+        {% for sun in object_list2 %}
+        <tr style="background-color: #d3d3d3">
+            <td></td>
+            <td>합계 :</td>
+            <td>{{sun[0]}}</td>
+            <td>{{sun[1]}}</td>
+            <td>{{sun[2]}}</td>
+            <td>{{sun[3]}}</td>
+            <td>{{sun[4]}}</td>
+        </tr>
+        <tr style="background-color: #d3d3d3">
+            <td></td>
+            <td>평균 :</td>
+            <td>{{sun[5]}}</td>
+            <td>{{sun[6]}}</td>
+            <td>{{sun[7]}}</td>
+            <td>{{sun[8]}}</td>
+            <td>{{sun[9]}}</td>
+        </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+    {% endblock explain_contents %}

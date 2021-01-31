@@ -1,0 +1,36 @@
+{% extends "base.html" %}
+{% block header %}
+
+{% endblock header %}
+
+{% block explain_contents %}
+<style>
+    table {
+        text-align: center
+    }
+
+</style>
+
+<center>
+    <h1>품목 별 판매 총액</h1>
+    <br><br>
+    <table class="table">
+        <thead>
+        <tr>
+            <th>품목</th>
+            <th>판매총액</th>
+        </tr>
+        </thead>
+        <tbody>
+        {% for product_sum in object_list %}
+        <tr>
+            <td>{{product_sum[0]}}</td>
+            <td>{{product_sum[1]}}
+        </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+</center>
+
+
+{% endblock explain_contents %}
