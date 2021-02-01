@@ -1,0 +1,30 @@
+from urllib.request import urlopen
+import urllib.parse
+from bs4 import BeautifulSoup
+import time
+import re
+import os
+import shutil
+
+def naverCrawlNews(date=time.strftime('%Y%m%d', time.localtime(time.time())),
+                   page_number=2):
+    with open("naver뉴스_1.txt", 'w', encoding='utf8') as f:
+        f.write(date+"일자 속보\n\n")
+    pre_url = "https://m.news.naver.com/officeMain.nhn?sid1=001"
+    for page_no in range(1, page_number+1):
+        pre_url2 = pre_url + str(page_no)
+        try:
+            url = urlopen(pre_url2)
+        except:
+            print ("오픈에러!")
+            return None
+        soup = BeautifulSoup(url, 'lxml')
+        newslist = soup.find_all('a')
+        print ("%d 페이지 크롤링..." % page_no)
+        for i in newslist:
+            if(i.text != None):
+                with open("naver뉴스.txt", 'a', encoding='utf8') as f:
+                    f.write(i.text.lstrip() + "\n" + i['href'] + "\n\n")
+        print ("저장완료!")
+
+naverCrawlNews() 
