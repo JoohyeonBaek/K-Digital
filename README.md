@@ -3,8 +3,6 @@
 20.12.10 ~ 21.05.06
 
 * JAVA
-  * Eclipse
-  * Data Structure
 * DB
   * MariaDB
   * HeidiSQL
@@ -17,6 +15,7 @@
   * Servlet
   * 
 * Python
+  * 
   * Django
   * Flask
   * Crawling
