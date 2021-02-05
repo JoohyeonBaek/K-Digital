@@ -1,0 +1,41 @@
+{% extends "base.html" %}
+{% load static %}
+{% block explain_contents %}
+
+<center>
+    <h2>북마크 리스트</h2>
+    <h3>
+        <div>
+            <a href="{% url 'marcador:marcador_bookmark_create' %}">---생성---</a>
+        </div>
+        <ul class="list-unstyled">
+            {% for bookmark in bookmarks %}
+            <li class="well well-sm">{% include 'marcador/bookmark.html' %}</li>
+            {% empty %}
+            <li>북마크가 없습니다 :</li>
+            {% endfor %}
+        </ul>
+        {% if bookmarks.has_other_pages %}
+        <ul class="pagination">
+            {% if users.has_prevoius %}
+                <li><a href="?page={{ bookmarks.previous_page_number }}"><<</a></li>
+            {% else %}
+                <li class="disabled"><span><<</span></li>
+            {% endif %}
+            {% for i in bookmarks.paginator.page_range %}
+            {% if users.number == i %}
+                <li class="active"><span>{{ i }}<span class="sr-only">(current)</span></span></li>
+            {% else %}
+                <li><a href="?page={{ i }}">{{ i }}</a></li>
+            {% endif %}
+            {% endfor %}
+            {% if users.has_next %}
+                <li><a href="?page={{ bookmarks.next_page_number }}">$#187</a></li>
+            {% else %}
+                <li class="disabled"><span>&laquo;</span></li>
+            {% endif %}
+        </ul>
+    </h3>
+</center>
+{% endif %}
+{% endblock explain_contents %}

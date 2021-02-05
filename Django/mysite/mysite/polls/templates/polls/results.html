@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+{% load static %}
+{%  block explain_contents %}
+<center><h1>{{ question.question_text }}</h1>
+    <h4>
+<ul>
+{% for choice in question.choice_set.all %}
+    <li>{{ choice.choice_text }} ------ {{ choice.votes }} vote{{ choice.votes|pluralize }}</li>
+{% endfor %}
+</ul>
+<a href="{% url 'polls:detail' question.id %}">다시 투표하시겠습니까. ?</a>
+<br>
+<a href="{% url 'polls:index' %}"> 리스트로 가기 </a>
+ </h4>
+</center>
+{%  endblock explain_contents %}

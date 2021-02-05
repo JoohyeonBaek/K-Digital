@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+{% load static %}
+{% block explain_contents %}
+
+<p></p>
+<p></p>
+<p></p>
+<center>
+    <h2>성적 입력</h2>
+    <form method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <input type="submit" value="Submit">
+    </form>
+</center>
+{% endblock explain_contents %}

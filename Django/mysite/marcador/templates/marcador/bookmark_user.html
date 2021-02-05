@@ -1,0 +1,13 @@
+{% extends "base.html" %}
+{% load static %}
+{% block explain_contents %}
+
+<center>
+{{ owner.username }}'s bookmarks
+
+    <h2> {{ owner.username }}'s bookmarks<br>
+        <small> 총 북마크 갯수는 {{ bookmarks.count }} 입니다. </small>
+    </h2>
+</center>
+
+{% endblock explain_contents %}

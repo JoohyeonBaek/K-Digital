@@ -1,0 +1,24 @@
+{% extends "base.html" %}
+{% load static %}
+{% block explain_contents %}
+
+{% load crispy_forms_tags %}
+<center>
+    <h1>
+        {% if create %}북마크 생성{% else %}북마크 편집{% endif %}
+    </h1>
+    {% if create %}
+        {% url "maracdor:marcador_bookmark_create" as action_url %}
+    {% else %}
+        {% url "marcador:marcador_bookmark_edit" pk=form.instance.pk as action_url %}
+    {% endif %}
+
+    <form action="{{ action_url}}" method="post" accept-charset="utf-8">
+        <h3>
+            {{ form|crispy }}
+            {% csrf_token %}
+            <p><input type="submit" class="btn btn-default" value="Save"></p>
+        </h3>
+    </form>
+</center>
+{% endblock explain_contents %}

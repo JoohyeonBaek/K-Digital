@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+{% load i18n static %}
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>BigData</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    {% block header %}
+    {% endblock header%}
+</head>
+<body>
+<div id="sidebar" class="container">
+    {% block menu %}
+    <nav class="navbar navbar-inverse">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <a class="navbar-brand" href="#">Deep Machine Learning</a>
+            </div>
+            <ul class="nav navbar-nav">
+                <li class="active"><a href="http://127.0.0.1:8000">선문홈</a></li>
+                <li class="active"><a href="http://127.0.0.1:8000/show_pandas">그래픽출력</a></li>
+                <li class="active"><a href="http://127.0.0.1:8000/polls">투표</a></li>
+                <li class="active"><a href="http://127.0.0.1:8000/sungjuk">성적</a></li>
+                <li class="active"><a href="http://127.0.0.1:8000/marcador">북마크</a></li>
+                <li class="active"><a href="http://127.0.0.1:8000/login">로그인</a></li>
+                <li class="active"><a href="http://127.0.0.1:8000/logout">로그아웃</a></li>
+                <li class="active"><a href="http://127.0.0.1:8000/admin">관리자</a></li>
+            </ul>
+        </div>
+    </nav>
+    {% endblock menu %}
+</div>
+{% block title %}
+{% endblock title%}
+
+{% block contents %}
+
+{% endblock contents%}
+
+{% block explain_contents %}
+
+{% endblock explain_contents%}
+<center>이 홈페이지는 장고 교육을 위해 제작되었습니다. <br>
+    <h3>선문대학교</h3></center>
+
+</body>
+</html>
