@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+<title>Insert title here</title>
+</head>
+<body>
+	<center>
+	<div class="container" style="margin-top: 10%">
+		<h2>3팀_MemberTable 다루기</h2>
+		<p>JSP Servlet 활용</p>
+		<button type="button" class="btn btn-primary" data-toggle="collapse" data-target="#menu">메뉴</button>
+		<div id="menu" class="collapse">
+			<div class="btn-group">
+				<button type="button" class="btn btn-primary" data-toggle="collapse" data-target="#insert">회원가입</button>
+				<form method="get" action="selectProcess_1">
+					<button type="submit" class="btn btn-primary" data-toggle="collapse" data-target="#select">회원정보조회</button>
+				</form>
+
+				<button type="button" class="btn btn-primary" data-toggle="collapse" data-target="#update">회원정보변경</button>
+				<button type="button" class="btn btn-primary" data-toggle="collapse" data-target="#delete">회원정보삭제</button>
+			</div>
+
+			<!-- insert -->
+			<div id="insert" class="collapse">
+				<form method="post" action="registerProcess_1" style="text-align: center;">
+					<table class="table">						
+						<tr>							
+							<td style="text-align: center;">
+								이름 <input type="text" name="name" size="30" />
+							</td>
+						</tr>
+						<tr>
+							
+							<td style="text-align: center;">
+								주소 <input type="text" name="addr" size="30" />
+							</td>
+						</tr>
+					</table>
+					<br />
+					<button type="submit" class="btn btn-info">회원가입</button>
+					<!-- <input type="submit" value="회원가입" class="btn btn-info"/> -->
+				</form>
+			</div>
+
+			<!-- update -->
+			<div id="update" class="collapse">
+				<form method="post" action="updateProcess_1">
+					<h1>업데이트할 사람의 번호, 이름, 주소를 입력해주세요.</h1>
+					<table class="table">
+						<tr>
+							<td style="text-align: center;">
+								번호 <input type="text" name="num">
+							</td>
+						</tr>
+						<tr>
+							<td style="text-align: center;">
+								이름 <input type="text" name="name">
+							</td>
+						</tr>
+						<tr>
+							<td style="text-align: center;">
+								주소 <input type="text" name="addr">
+							</td>
+						</tr>
+					</table>
+					<button type="submit" class="btn btn-info">변경</button>					
+				</form>
+			</div>
+
+			<!-- delete -->
+			<div id="delete" class="collapse">
+				<form method="post" action="deleteProcess_1">
+					<h1>삭제할 번호를 입력하세요</h1>
+					<input type="text" name=delete_num><br>
+					<button type="submit" class="btn btn-info">삭제</button>	
+				</form>
+			</div>
+		</div>
+	</div>
+	</center>
+
+
+
+
+
+
+
+
+
+
+
+
+
+	<!-- <form method="post" action="registerProcess">
+		<table width="400" border="0" border bgcolor="black" cellpadding="7">
+			<caption>
+				<h3>
+					<u><font face="함초롬돋움">회 원 가 입</font></u>
+				</h3>
+			</caption>
+			<tr>
+				<th width="300" bgcolor="#ffa500">이름</th>
+				<td width="700" align="left" bgcolor="ffffff">
+					<input type="text" name="name" size="30" />
+				</td>
+			</tr>
+			<tr>
+				<th width="300" bgcolor="#ffa500">전화</th>
+				<td width="700" align="left" bgcolor="ffffff">
+					<input type="text" name="tel" size="5" />- <input type="text" name="tel" size="5" />- <input type="text" name="tel" size="5" />
+				</td>
+			</tr>
+			<tr>
+				<th width="300" bgcolor="#ffa500">주소</th>
+				<td width="700" align="left" bgcolor="ffffff">
+					<input type="text" name="addr" size="30" /> <input type="text" name="addr" size="30" />
+				</td>
+			</tr>
+		</table>
+		<br />
+		<table width="400">
+			<tr>
+				<td align="right">
+					<input type="submit" value="회원가입" />
+				</td>
+			</tr>
+		</table>
+
+
+	</form>
+
+	<form method="get" action="selectProcess_1">
+		<input type="submit" value="회원보기" />
+	</form>
+
+
+	</center> -->
+</body>
+</html>

@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Bootstrap Example</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  <style>
+  body {
+      position: relative; 
+  }
+     .carousel-inner img {
+   width: 100%;
+    height: 100%;
+   }
+
+  </style>
+</head>
+<body data-spy="scroll" data-target=".navbar" data-offset="50">
+
+<nav class="navbar navbar-expand-sm bg-dark navbar-dark fixed-top">  
+  <ul class="navbar-nav">
+    <li class="nav-item">
+      <a class="nav-link" href="#section1">Section 1</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" href="#section2">Section 2</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" href="#section3">Section 3</a>
+    </li>
+    <li class="nav-item dropdown">
+      <a class="nav-link dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown">
+        Section 4
+      </a>
+      <div class="dropdown-menu">
+        <a class="dropdown-item" href="#section41">Link 1</a>
+        <a class="dropdown-item" href="#section42">Link 2</a>
+      </div>
+    </li>
+  </ul>
+</nav>
+
+<div id="section1" class="container-fluid bg-success" style="padding-top:70px;padding-bottom:70px">
+  <h1>Section 1</h1>
+  <p>Try to scroll this section and look at the navigation bar while scrolling! Try to scroll this section and look at the navigation bar while scrolling!</p>
+  <p>Try to scroll this section and look at the navigation bar while scrolling! Try to scroll this section and look at the navigation bar while scrolling!</p>
+</div>
+<div id="section2" class="container-fluid bg-warning" style="padding-top:70px;padding-bottom:70px">
+  <h1>Section 2</h1>
+  <p>Try to scroll this section and look at the navigation bar while scrolling! Try to scroll this section and look at the navigation bar while scrolling!</p>
+  <p>Try to scroll this section and look at the navigation bar while scrolling! Try to scroll this section and look at the navigation bar while scrolling!</p>
+</div>
+
+
+<div id="section3" class="container-fluid bg-secondary" style="padding-top:70px;padding-bottom:100px">
+  <h1><font color="white"">< 윤정윤 ></font></h1>
+  <br>
+   <img src="../images/my.jpg" / width="230" height="310" align=left >
+   <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font face="함초롬돋움" size="6" color="white">이름 : 윤정윤</font></p>
+   
+   <br><p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font face="함초롬돋움" size="6" color="white">나이 : 24</font></p> 
+   
+   <br><p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font face="함초롬돋움" size="6" color="white">학교 : 선문대학교</font></p>
+   <br><p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font face="함초롬돋움" size="6" color="white">학과 : 역사문화콘텐츠학과</font></p>
+   
+   <br clear=both>
+   <br>
+   <font face="함초롬돋움" size="5" color="white" >
+      &nbsp; 안녕하세요 저는 다음달 18일에 졸업 예정인 역사문화콘텐츠학과 17학번 윤정윤입니다. 작년 1월달에 선문대학교 스텝업 프로그램에
+      참가하여 한달동안 호주에서 생활하였습니다. 
+   </font>
+   <p  align="center"><font size="8" color="white" face="Arial Black"> - Australia -</font></p>
+<div id="myCarousel" class="carousel slide" data-ride="carousel">
+
+  <!-- Indicators -->
+  <ul class="carousel-indicators">
+    <li data-target="#demo" data-slide-to="0" class="active"></li>
+    <li data-target="#demo" data-slide-to="1"></li>
+    <li data-target="#demo" data-slide-to="2"></li>
+  </ul>
+  
+  <!-- The slideshow -->
+  <div class="carousel-inner">
+    <div class="carousel-item active">
+      <img src="../images/aus1.jpg" alt="aus1" width="1100" height="500">
+    </div>
+    <div class="carousel-item">
+      <img src="../images/aus2.jpg" alt="aus2" width="1100" height="500">
+    </div>
+    <div class="carousel-item">
+      <img src="../images/aus3.jpg" alt="aus3" width="1100" height="500">
+    </div>
+  </div>
+  
+  <!-- Left and right controls -->
+  <a class="carousel-control-prev" href="#demo" data-slide="prev">
+    <span class="carousel-control-prev-icon"></span>
+  </a>
+  <a class="carousel-control-next" href="#demo" data-slide="next">
+    <span class="carousel-control-next-icon"></span>
+  </a>
+</div>
+
+</div>
+
+
+<div id="section41" class="container-fluid bg-danger" style="padding-top:70px;padding-bottom:70px">
+  <h1>Section 4 Submenu 1</h1>
+  <p>Try to scroll this section and look at the navigation bar while scrolling! Try to scroll this section and look at the navigation bar while scrolling!</p>
+  <p>Try to scroll this section and look at the navigation bar while scrolling! Try to scroll this section and look at the navigation bar while scrolling!</p>
+</div>
+<div id="section42" class="container-fluid bg-info" style="padding-top:70px;padding-bottom:70px">
+  <h1>Section 4 Submenu 2</h1>
+  <p>Try to scroll this section and look at the navigation bar while scrolling! Try to scroll this section and look at the navigation bar while scrolling!</p>
+  <p>Try to scroll this section and look at the navigation bar while scrolling! Try to scroll this section and look at the navigation bar while scrolling!</p>
+</div>
+
+</body>
+</html>

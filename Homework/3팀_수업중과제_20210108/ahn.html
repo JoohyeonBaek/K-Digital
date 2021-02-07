@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Bootstrap Example</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+  <link rel="stylesheet" href="/resources/demos/style.css">
+  <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+  <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+  <script>
+  $( function() {
+       $( "#accordion" ).accordion({
+         heightStyle: "fill"
+       });
+    
+       $( "#accordion-resizer" ).resizable({
+         minHeight: 140,
+         minWidth: 200,
+         resize: function() {
+           $( "#accordion" ).accordion( "refresh" );
+         }
+       });
+     } );
+  </script>
+  <script>
+  $( function() {
+    $( document ).tooltip({
+      item: "img",
+      content: function() {
+        var element = $( this );
+        
+        if ( element.is( "img" ) ) {
+          return element.attr( "alt" );
+        }
+      }
+    });
+  } );
+  </script>
+  <style>
+  #chartdiv {
+  width: 100%;
+  height: 600px;
+}
+  
+  #accordion-resizer {
+    padding: 10px;
+    width: 700px;
+    height: 500px;
+  }
+  body {
+      position: relative; 
+  }
+  #dubu{
+     width:35%;
+     margin-right:80px;
+     
+  }
+  .ui-tooltip {
+    max-width: 350px;
+  }
+  </style>
+</head>
+<body data-spy="scroll" data-target=".navbar" data-offset="50">
+
+<nav class="navbar navbar-expand-sm bg-dark navbar-dark fixed-top">  
+  <ul class="navbar-nav">
+    <li class="nav-item">
+      <a class="nav-link" href="#section1">Section 1</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" href="#section2">Section 2</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" href="#section3">Section 3</a>
+    </li>
+    <li class="nav-item dropdown">
+      <a class="nav-link dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown">
+        Section 4
+      </a>
+      <div class="dropdown-menu">
+        <a class="dropdown-item" href="#section41">Link 1</a>
+        <a class="dropdown-item" href="#section42">Link 2</a>
+      </div>
+    </li>
+      <li class="nav-item">
+      <a class="nav-link" href="#section5">Section 5</a>
+    </li>
+  </ul>
+</nav>
+
+<div id="section1" class="container-fluid bg-success" style="padding-top:70px;padding-bottom:70px">
+  <h1>Section 1</h1>
+  <p>Try to scroll this section and look at the navigation bar while scrolling! Try to scroll this section and look at the navigation bar while scrolling!</p>
+  <p>Try to scroll this section and look at the navigation bar while scrolling! Try to scroll this section and look at the navigation bar while scrolling!</p>
+</div>
+<div id="section2" class="container-fluid bg-warning" style="padding-top:70px;padding-bottom:70px">
+  <h1>Section 2</h1>
+  <p>Try to scroll this section and look at the navigation bar while scrolling! Try to scroll this section and look at the navigation bar while scrolling!</p>
+  <p>Try to scroll this section and look at the navigation bar while scrolling! Try to scroll this section and look at the navigation bar while scrolling!</p>
+</div>
+<div id="section3" class="container-fluid bg-secondary" style="padding-top:70px;padding-bottom:70px">
+  <h1>Section 3</h1>
+  <p>Try to scroll this section and look at the navigation bar while scrolling! Try to scroll this section and look at the navigation bar while scrolling!</p>
+  <p>Try to scroll this section and look at the navigation bar while scrolling! Try to scroll this section and look at the navigation bar while scrolling!</p>
+</div>
+<div id="section41" class="container-fluid bg-danger" style="padding-top:40px;padding-bottom:10px">
+  <h1>About 안준우 </h1>
+  <p></p><p></p><br>
+  <div id="accordion-resizer" class="ui-widget-content">
+<div id="accordion">
+  <h3>MENU</h3>
+  <div>
+  <ol style=font-size:20px>
+  <li>인적사항</li>
+  <li>이메일</li>
+  <li>취미 & 취향</li>
+</ol>   
+    
+  </div>
+  <h3>인적사항</h3>
+  <div>
+  <p >
+   이섹션은 저의 인적사항을 담은 공간입니다. 전공, 생년월일, 사는곳이 담겨있습니다
+  </p> 
+   <ul>
+  <li>기계공학과 15학번</li>
+  <li>1996.10.14</li>
+  <li>서울시 노원구</li>
+</ul>  
+  </div>
+  <h3>E mail</h3>
+  <div>
+    <p>
+   저에게 문의하고 싶은 내용은 아래 이메일주소로 보내시면 됩니다
+    </p>
+    <p style=font-size:larger>yajunwooda@naver.com</p>
+    <a href="mailto:yajunwooda@naver.com">이메일보내기!</a>
+  </div>
+  <h3>취미 & 취향</h3>
+  <div>
+    <p>
+    <img id="dubu"src="../images/dubu.jpg" alt="dubu">
+    <img id="dubu"src="../images/abouttime.jpg" alt="About time">
+    </p>
+  </div>
+</div></div>
+<div id="section42" class="container-fluid bg-info" style="padding-top:40px;padding-bottom:10px">
+  <h1>5명의 성적관리</h1>
+  
+
+
+
+<div id="chartdiv"></div></div>
+<div id="section5" class="container-fluid bg-info" style="padding-top:70px;padding-bottom:70px">
+ </div>
+  <h1>Section 5 </h1>
+  <p>Try to scroll this section and look at the navigation bar while scrolling! Try to scroll this section and look at the navigation bar while scrolling!</p>
+  <p>Try to scroll this section and look at the navigation bar while scrolling! Try to scroll this section and look at the navigation bar while scrolling!</p>
+</div>
+</body>
+</html>

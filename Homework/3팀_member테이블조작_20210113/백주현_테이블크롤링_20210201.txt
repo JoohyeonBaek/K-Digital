@@ -1,0 +1,49 @@
+import requests
+import pandas as pd # numpy ( 배열 + 선형대수 행중심 ) / pandas( 데이터 프레임 - 열중심 ) / scikits / tensorflow / keras
+        # 열내 데이터가 동질적, 열간 이질적
+from bs4 import BeautifulSoup
+class HTMLTableParser:
+    def parse_url(self, url):# 테이블 리스트를 만드는 함수
+        response = requests.get(url)
+        soup = BeautifulSoup(response.text, 'lxml')
+        # 테이블별로 이름
+        return [(table('id'), self.parse_html_table(table)) for table in soup.find_all('table')]
+   
+    # 1개 테이블만 파싱
+    def parse_html_table(self, table):# 데이블에서 행과 열을 파싱해서 데이터 프레임으로
+        n_columns = 0 # 열수
+        n_rows = 0 # 행수
+        column_names = []# 열이름을 저장
+        for row in table.find_all('tr'):
+            td_tags = row.find_all('td')
+            if len(td_tags) > 0:# 행에 내용이 있으면
+                n_rows += 1
+                if n_columns == 0:# 열의 개수가 정해지지 않았으면 : 행수를 모르면
+                    n_columns = len(td_tags) # 열개수를 확정
+            th_tags = row.find_all('th') # 열이름
+            if len(th_tags) > 0 and len(column_names) == 0:# 열이름이 없으면
+                for th in th_tags:
+                    column_names.append(th.get_text())
+        if len(column_names) > 0 and len(column_names) != n_columns:
+            raise Exception("컬럼 타이틀이 컬럼과 숫자가 맞지 않음 ")
+        columns = column_names if len(column_names) > 0 else range(0, n_columns) # 열이름이 없을 경우는  번호로 결정
+
+        # int(10)
+        # 실제 데이터를 데이터프레임에 저장
+        df = pd.DataFrame(columns=columns, index=range(0, n_rows))# 초기화 , 공간확보
+        row_marker = 0
+        for row in table.find_all('tr'):
+            column_marker = 0
+            columns = row.find_all('td')
+            for column in columns:
+                df.iloc[row_marker, column_marker] = column.get_text()
+                column_marker += 1
+            if len(columns) > 0:
+                row_marker += 1
+               
+        for col in df:# 숫자는 숫자화 - 열을 가지고 옴
+            try:
+                df[col] = df[col].astype(float) # 형변환
+            except ValueError:
+                pass
+        return df 

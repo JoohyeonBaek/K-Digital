@@ -1,0 +1,621 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>3팀 소개 페이지</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous"></head>
+
+<style>
+body {
+	position: relative;
+}
+
+/* section 1 */
+#h1_1, #h2_1 {
+	text-align: center;
+}
+
+#members {
+  width: 80%;
+  margin:0 auto;
+}
+
+.member {
+  width: 19.5%;
+  display: inline-block;
+}
+
+#members ul {
+	font-weight: bolder;
+	margin-top: 3%;
+	font-size: larger;
+}
+
+/* section 2 */
+   
+.wrapper{
+         width: 10px;
+         height: 10px;
+         position: realtive;
+         background-color: yellow;
+         overflow: hidden;
+}
+.menu{
+         width: 500px;
+         height: 400px;
+         position: absolute;
+         top: 2300px;
+         left: -500px;
+         background-color: #ffffff;
+         z-index: 10;
+         transition: left 0.4s ease-out;
+      }
+.menu2{
+         width: 500px;
+         height: 400px;
+         position: absolute;
+         top: 1900px;
+         left: -500px;
+         background-color: #ffffff;
+         z-index: 10;
+         transition: left 0.4s ease-out;
+      }
+      
+.menu3{
+         width: 500px;
+         height: 400px;
+         position: absolute;
+         top: 2700px;
+         left: -500px;
+         background-color: #ffffff;
+         z-index: 10;
+         transition: left 0.4s ease-out;
+      }
+      
+.menu4{
+         width: 500px;
+         height: 400px;
+         position: absolute;
+         top: 3100px;
+         left: -500px;
+         background-color: #ffffff;
+         z-index: 10;
+         transition: left 0.4s ease-out;
+      }
+      
+.menu5{
+         width: 500px;
+         height: 400px;
+         position: absolute;
+         top: 3500px;
+         left: -500px;
+         background-color: #ffffff;
+         z-index: 10;
+         transition: left 0.4s ease-out;
+      }
+.backdrop{
+         z-index: 9;
+         position: absolute;
+         top: 0;
+         left: 0;
+         right: 0;
+         bottom: 0;
+         background-color: pink;
+         opacity: 0.6;
+         display: none;
+      }
+
+/* section 3 */
+
+.carousel-inner img {
+    width: 30%;
+    height: 10%;
+}
+
+.carousel-inner h1 {font-size:70px; color: purple; text-decoration:underline; font-family:'BatangChe'}
+
+/* section 4 */
+#one, #two, #three, #four, #five {
+	display: none;
+}
+
+/* section 5 */
+
+  .carousel-inner #email img {
+    width: 100%;
+    height: 700px;
+  }
+
+  #title{
+  text-align:center;
+  font-size:bold;
+  }
+  .menu_5 {
+   width: 100%;
+   height: 700px;
+   background-color: #ff3333;
+}
+   #sul {
+   font-weight: bolder;
+    
+   font-size: 15px;
+   text-align: center;
+}
+
+
+</style>
+</head>
+<body data-spy="scroll" data-target=".navbar" data-offset="50" style="background-image:url('images/mainimage.jpg'); background-size: contain;">
+	<nav class="navbar navbar-expand-sm bg-dark navbar-dark fixed-top">
+		<ul class="navbar-nav">
+			<li class="nav-item"><a class="nav-link" href="#home">Home</a></li>
+			<li class="nav-item"><a class="nav-link" href="#section1">3팀 소개</a></li>
+			<li class="nav-item"><a class="nav-link" href="#section2">조원의 취미 생활</a></li>
+			<li class="nav-item"><a class="nav-link" href="#section3">좋아하는 영화</a></li>
+			<li class="nav-item"><a class="nav-link" href="#section4">새해 목표</a></li>
+			<li class="nav-item"><a class="nav-link" href="#section5">E-Mail 주소</a></li>
+		</ul>
+	</nav>
+	
+	<!-- Home -->
+	<div id="home" class="container-fluid" style="padding-top: 70px; padding-bottom: 70px; width: 100vw; height: 100vh;">
+		<header class="masthead d-flex" style="vertical-align: middle;">    
+			<div class="container text-center my-auto" style="padding-top: 18%;">
+			  <h1 class="mb-1">3 Team Introduction Page</h1>
+			  <br><br>			  
+			  <a class="btn btn-primary btn-xl js-scroll-trigger" href="#section1">Start</a>
+			</div>
+			<div class="overlay">
+		  </header> 
+	</div>
+
+
+	<!-- section 1 -->
+	<div id="section1" class="container-fluid bg-success" style="padding-top: 70px; padding-bottom: 70px;">
+		<br>
+		<h1 id="h1_1">Team3_진한 순라면</h1>
+		<br>
+		<br>
+		<h2 id="h2_1">Team3 members</h2>
+		<br>
+		<div id="members">
+			<div class="member" style="width: 19.5%; display: inline-block;">
+				<img src="images/profile.gif" class="rounded-circle" alt="" style="width: 100%;">
+				<ul>
+					<li>백주현</li>
+					<li>컴퓨터공학과</li>
+					<li>26세</li>
+				</ul>
+			</div>
+
+			<div class="member">
+				<img src="images/profile.gif" class="rounded-circle" alt="" style="width: 100%;">
+				<ul>
+					<li>안준우</li>
+					<li>기계공학과</li>
+					<li>26세</li>
+				</ul>
+			</div>
+
+			<div class="member">
+				<img src="images/profile.gif" class="rounded-circle" alt="" style="width: 100%;">
+				<ul>
+					<li>김성진</li>
+					<li>기계공학과</li>
+					<li>26세</li>
+				</ul>
+			</div>
+
+			<div class="member">
+				<img src="images/profile.gif" class="rounded-circle" alt="" style="width: 100%;">
+				<ul>
+					<li>이재호</li>
+					<li>디스플레이학과</li>
+					<li>26세</li>
+				</ul>
+			</div>
+
+			<div class="member">
+				<img src="images/profile.gif" class="rounded-circle" alt="" style="width: 100%;">
+				<ul>
+					<li>윤정윤</li>
+					<li>역사문화콘텐츠학과</li>
+					<li>24세</li>
+				</ul>
+			</div>
+		</div>
+	</div>
+
+  <!-- section 2 -->  
+  
+  <div id="section2" class="container-fluid bg-warning" style="padding-top:200px;padding-bottom:200px">
+	<h1>조원의 취미 생활 </h1>
+	<div class="wrapper">
+	   <div class="menu">
+		  <ul>
+			 <svg xmlns="http://www.w3.org/2000/svg" width="50" height="50" fill="currentColor" class="bi bi-chat-dots" viewBox="0 0 16 16">
+			   <path d="M5 8a1 1 0 1 1-2 0 1 1 0 0 1 2 0zm4 0a1 1 0 1 1-2 0 1 1 0 0 1 2 0zm3 1a1 1 0 1 0 0-2 1 1 0 0 0 0 2z"/>
+			   <path d="M2.165 15.803l.02-.004c1.83-.363 2.948-.842 3.468-1.105A9.06 9.06 0 0 0 8 15c4.418 0 8-3.134 8-7s-3.582-7-8-7-8 3.134-8 7c0 1.76.743 3.37 1.97 4.6a10.437 10.437 0 0 1-.524 2.318l-.003.011a10.722 10.722 0 0 1-.244.637c-.079.186.074.394.273.362a21.673 21.673 0 0 0 .693-.125zm.8-3.108a1 1 0 0 0-.287-.801C1.618 10.83 1 9.468 1 8c0-3.192 3.004-6 7-6s7 2.808 7 6c0 3.193-3.004 6-7 6a8.06 8.06 0 0 1-2.088-.272 1 1 0 0 0-.711.074c-.387.196-1.24.57-2.634.893a10.97 10.97 0 0 0 .398-2z"/>
+			 </svg>
+			 <h1> 축구 </h1>
+			 <li> 스트레스는 운동할 때 가장 잘 풀려요.</li>
+		  </ul>
+	   </div>
+	   <div class="backdrop"></div>
+	</div>
+	
+	<div class="wrapper">
+	   <div class="menu2">
+		  <ul>
+			 <svg xmlns="http://www.w3.org/2000/svg" width="50" height="50" fill="currentColor" class="bi bi-chat-dots" viewBox="0 0 16 16">
+			   <path d="M5 8a1 1 0 1 1-2 0 1 1 0 0 1 2 0zm4 0a1 1 0 1 1-2 0 1 1 0 0 1 2 0zm3 1a1 1 0 1 0 0-2 1 1 0 0 0 0 2z"/>
+			   <path d="M2.165 15.803l.02-.004c1.83-.363 2.948-.842 3.468-1.105A9.06 9.06 0 0 0 8 15c4.418 0 8-3.134 8-7s-3.582-7-8-7-8 3.134-8 7c0 1.76.743 3.37 1.97 4.6a10.437 10.437 0 0 1-.524 2.318l-.003.011a10.722 10.722 0 0 1-.244.637c-.079.186.074.394.273.362a21.673 21.673 0 0 0 .693-.125zm.8-3.108a1 1 0 0 0-.287-.801C1.618 10.83 1 9.468 1 8c0-3.192 3.004-6 7-6s7 2.808 7 6c0 3.193-3.004 6-7 6a8.06 8.06 0 0 1-2.088-.272 1 1 0 0 0-.711.074c-.387.196-1.24.57-2.634.893a10.97 10.97 0 0 0 .398-2z"/>
+			 </svg>
+			 <h1> 음악 </h1>
+			 <li> 음악을 들으면 마음이 차분해져요. </li>
+		  </ul>
+	   </div>
+	   <div class="backdrop"></div>
+	</div>
+	
+	<div class="wrapper">
+	   <div class="menu3">
+		  <ul>
+			 <svg xmlns="http://www.w3.org/2000/svg" width="50" height="50" fill="currentColor" class="bi bi-chat-dots" viewBox="0 0 16 16">
+			   <path d="M5 8a1 1 0 1 1-2 0 1 1 0 0 1 2 0zm4 0a1 1 0 1 1-2 0 1 1 0 0 1 2 0zm3 1a1 1 0 1 0 0-2 1 1 0 0 0 0 2z"/>
+			   <path d="M2.165 15.803l.02-.004c1.83-.363 2.948-.842 3.468-1.105A9.06 9.06 0 0 0 8 15c4.418 0 8-3.134 8-7s-3.582-7-8-7-8 3.134-8 7c0 1.76.743 3.37 1.97 4.6a10.437 10.437 0 0 1-.524 2.318l-.003.011a10.722 10.722 0 0 1-.244.637c-.079.186.074.394.273.362a21.673 21.673 0 0 0 .693-.125zm.8-3.108a1 1 0 0 0-.287-.801C1.618 10.83 1 9.468 1 8c0-3.192 3.004-6 7-6s7 2.808 7 6c0 3.193-3.004 6-7 6a8.06 8.06 0 0 1-2.088-.272 1 1 0 0 0-.711.074c-.387.196-1.24.57-2.634.893a10.97 10.97 0 0 0 .398-2z"/>
+			 </svg>
+			 <h1> 독서 </h1>
+			 <li> 독서는 마음의 양식. </li>
+		  </ul>
+	   </div>
+	   <div class="backdrop"></div>
+	</div>
+	
+	<div class="wrapper">
+	   <div class="menu4">
+		  <ul>
+			 <svg xmlns="http://www.w3.org/2000/svg" width="50" height="50" fill="currentColor" class="bi bi-chat-dots" viewBox="0 0 16 16">
+			   <path d="M5 8a1 1 0 1 1-2 0 1 1 0 0 1 2 0zm4 0a1 1 0 1 1-2 0 1 1 0 0 1 2 0zm3 1a1 1 0 1 0 0-2 1 1 0 0 0 0 2z"/>
+			   <path d="M2.165 15.803l.02-.004c1.83-.363 2.948-.842 3.468-1.105A9.06 9.06 0 0 0 8 15c4.418 0 8-3.134 8-7s-3.582-7-8-7-8 3.134-8 7c0 1.76.743 3.37 1.97 4.6a10.437 10.437 0 0 1-.524 2.318l-.003.011a10.722 10.722 0 0 1-.244.637c-.079.186.074.394.273.362a21.673 21.673 0 0 0 .693-.125zm.8-3.108a1 1 0 0 0-.287-.801C1.618 10.83 1 9.468 1 8c0-3.192 3.004-6 7-6s7 2.808 7 6c0 3.193-3.004 6-7 6a8.06 8.06 0 0 1-2.088-.272 1 1 0 0 0-.711.074c-.387.196-1.24.57-2.634.893a10.97 10.97 0 0 0 .398-2z"/>
+			 </svg>
+			 <h1> 게임 </h1>
+			 <li> 스트레스를 푸는 것에는 게임만한 것이 없죠. </li>
+		  </ul>
+	   </div>
+	   <div class="backdrop"></div>
+	</div>
+	
+	<div class="wrapper">
+	   <div class="menu5">
+		  <ul>
+			 <svg xmlns="http://www.w3.org/2000/svg" width="50" height="50" fill="currentColor" class="bi bi-chat-dots" viewBox="0 0 16 16">
+			   <path d="M5 8a1 1 0 1 1-2 0 1 1 0 0 1 2 0zm4 0a1 1 0 1 1-2 0 1 1 0 0 1 2 0zm3 1a1 1 0 1 0 0-2 1 1 0 0 0 0 2z"/>
+			   <path d="M2.165 15.803l.02-.004c1.83-.363 2.948-.842 3.468-1.105A9.06 9.06 0 0 0 8 15c4.418 0 8-3.134 8-7s-3.582-7-8-7-8 3.134-8 7c0 1.76.743 3.37 1.97 4.6a10.437 10.437 0 0 1-.524 2.318l-.003.011a10.722 10.722 0 0 1-.244.637c-.079.186.074.394.273.362a21.673 21.673 0 0 0 .693-.125zm.8-3.108a1 1 0 0 0-.287-.801C1.618 10.83 1 9.468 1 8c0-3.192 3.004-6 7-6s7 2.808 7 6c0 3.193-3.004 6-7 6a8.06 8.06 0 0 1-2.088-.272 1 1 0 0 0-.711.074c-.387.196-1.24.57-2.634.893a10.97 10.97 0 0 0 .398-2z"/>
+			 </svg>
+			 <h1> 유튜브 </h1>
+			 <li> 유튜브 안좋아하는 사람이 있을까요? </li>
+		  </ul>
+	   </div>
+	   <div class="backdrop"></div>
+	</div>
+	
+	<div class="container">
+		  <h2><button type="button2" class="btn btn-info" id="menuBtn2"> 백주현(팀장) </button><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-person-check-fill" viewBox="0 0 16 16">
+			<path fill-rule="evenodd" d="M15.854 5.146a.5.5 0 0 1 0 .708l-3 3a.5.5 0 0 1-.708 0l-1.5-1.5a.5.5 0 0 1 .708-.708L12.5 7.793l2.646-2.647a.5.5 0 0 1 .708 0z"/>
+			<path d="M1 14s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1H1zm5-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6z"/>
+		  </svg></h2>
+	  <div class="card">
+		<div class="card-header"> 음악듣기 </div>
+		<div class="card-body"><img src="images/song.jpg" height="200" width="200" /></div> 
+		<div class="card-footer"> 빅데이터 최고 </div>
+	  </div>
+	  
+		  <h2><button type="button" class="btn btn-primary" id="menuBtn"> 이재호(조원) </button><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-person-fill" viewBox="0 0 16 16">
+		   <path d="M3 14s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1H3zm5-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6z"/>
+		  </svg></h2>
+	  <div class="card">
+		<div class="card-header"> 축구하기 </div>
+		<div class="card-body"><img src="images/soccer.jpg" height="200" width="200" /></div> 
+		<div class="card-footer"> 빅데이터 최고 </div>
+	  </div>
+			
+			<h2><button type="button3" class="btn btn-light" id="menuBtn3"> 안준우(조원) </button><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-person-fill" viewBox="0 0 16 16">
+		   <path d="M3 14s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1H3zm5-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6z"/>
+		  </svg></h2>
+	  <div class="card">
+		<div class="card-header"> 독서하기 </div>
+		<div class="card-body"><img src="images/readbook.jpg" height="200" width="200" /></div> 
+		<div class="card-footer"> 빅데이터 최고 </div>
+	  </div>
+			
+			<h2><button type="button4" class="btn btn-dark" id="menuBtn4"> 김성진(조원) </button><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-person-fill" viewBox="0 0 16 16">
+		   <path d="M3 14s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1H3zm5-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6z"/>
+		  </svg></h2>
+	  <div class="card">
+		<div class="card-header"> 게임하기 </div>
+		<div class="card-body"><img src="images/game.jpg" height="200" width="200" /></div> 
+		<div class="card-footer"> 빅데이터 최고 </div>
+	  </div>
+			
+			<h2><button type="button5" class="btn btn-success" id="menuBtn5"> 윤정윤(조원) </button><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-person" viewBox="0 0 16 16">
+		   <path d="M8 8a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm2-3a2 2 0 1 1-4 0 2 2 0 0 1 4 0zm4 8c0 1-1 1-1 1H3s-1 0-1-1 1-4 6-4 6 3 6 4zm-1-.004c-.001-.246-.154-.986-.832-1.664C11.516 10.68 10.289 10 8 10c-2.29 0-3.516.68-4.168 1.332-.678.678-.83 1.418-.832 1.664h10z"/>
+		  </svg></h2>
+	  <div class="card">
+		<div class="card-header"> 유튜브보기 </div>
+		<div class="card-body"><img src="images/youtube.jpg" height="200" width="200" /></div> 
+		<div class="card-footer"> 빅데이터 최고 </div>
+	  </div>
+	  
+	   </div>
+	</div>
+
+  <script src="js/jquery-3.3.1.js"></script>
+<script>
+   $("#menuBtn").click(function(){
+      $(".menu").css("left", "0px")
+      .one("transitionend", function(){ $(".backdrop").show(); });
+   });
+   
+   $(".wrapper").click(function(){
+      $(".menu")
+      .css("left","-500px")
+      .one("transitionend",function(){
+         $(".backdrop").hide();
+      });
+   });
+   
+   $("#menuBtn2").click(function(){
+      $(".menu2").css("left", "0px")
+      .one("transitionend", function(){ $(".backdrop").show(); });
+   });
+   
+   $(".wrapper").click(function(){
+      $(".menu2")
+      .css("left","-500px")
+      .one("transitionend",function(){
+         $(".backdrop").hide();
+      });
+   });
+   
+   $("#menuBtn3").click(function(){
+      $(".menu3").css("left", "0px")
+      .one("transitionend", function(){ $(".backdrop").show(); });
+   });
+   
+   $(".wrapper").click(function(){
+      $(".menu3")
+      .css("left","-500px")
+      .one("transitionend",function(){
+         $(".backdrop").hide();
+      });
+   });
+   
+   $("#menuBtn4").click(function(){
+      $(".menu4").css("left", "0px")
+      .one("transitionend", function(){ $(".backdrop").show(); });
+   });
+   
+   $(".wrapper").click(function(){
+      $(".menu4")
+      .css("left","-500px")
+      .one("transitionend",function(){
+         $(".backdrop").hide();
+      });
+   });
+   
+   $("#menuBtn5").click(function(){
+      $(".menu5").css("left", "0px")
+      .one("transitionend", function(){ $(".backdrop").show(); });
+   });
+   
+   $(".wrapper").click(function(){
+      $(".menu5")
+      .css("left","-500px")
+      .one("transitionend",function(){
+         $(".backdrop").hide();
+      });
+   });
+   
+</script>
+
+	<!-- section 3 -->
+	<div id="section3" class="container-fluid bg-secondary" style="padding-top: 70px; padding-bottom: 70px">
+		<div id="myCarousel" class="carousel slide" data-ride="carousel">
+		<ul class="carousel-indicators">
+			<li data-target="#section3" data-slide-to="0" class="active"></li>
+			<li data-target="#section3" data-slide-to="1"></li>
+			<li data-target="#section3" data-slide-to="2"></li>
+			<li data-target="#section3" data-slide-to="3"></li>
+			<li data-target="#section3" data-slide-to="4"></li>
+		  </ul>
+		  
+		  <!-- The slideshow -->
+		  <div class="carousel-inner">
+			<div class="carousel-item active" align="center">  
+			<h1>윤정윤</h1>
+			  <img src="images/lalaland.jpg" alt="Ll" width="250" height="330">
+			</div>
+			<div class="carousel-item" align="center">
+			<h1>백주현</h1>
+			  <img src="images/interstellar.jpg" alt="is" width="250" height="330">
+			</div>
+			<div class="carousel-item" align="center">
+			<h1>김성진</h1>
+			  <img src="images/mitty.jpg" alt="mt" width="250" height="330">
+			</div>
+			<div class="carousel-item" align="center">
+			<h1>안준우</h1>
+			  <img src="images/abouttime.jpg" alt="at" width="250" height="330">
+			</div>
+			<div class="carousel-item" align="center">
+			<h1>이재호</h1>
+			  <img src="images/war.jpg" alt="w" width="250" height="330">
+			</div>
+		  </div>
+		  
+		  <!-- Left and right controls -->
+		  <a class="carousel-control-prev" href="#demo" data-slide="prev">
+			<span class="carousel-control-prev-icon"></span>
+		  </a>
+		  <a class="carousel-control-next" href="#demo" data-slide="next">
+			<span class="carousel-control-next-icon"></span>
+		  </a>
+		  </div>
+
+	</div>
+
+
+	<!-- section 4 -->
+	<div id="section4" class="container-fluid bg-info" style="padding-top:70px;padding-bottom:70px; height: 200%;">
+		<h1>새해 목표<i class="fas fa-heart"></i></h1>
+		<button type="button" class="btn btn-secondary" id="showBtn1">백주현</button> 
+		<p class="btn btn-secondary" id="one"> 연봉 3000 이상 데이터 분석직무 관련 취업 및 데이터 분석가 자격증 따기 !!<i class="fas fa-coffee"></i></p>
+		<p></p>
+		<button type="button" class="btn btn-success" id="showBtn2">안준우</button> 
+		<p class="btn btn-success" id="two"> 책 많이 읽기 <i class="fas fa-file"></i></p>
+		<p></p>
+		<button type="button" class="btn btn-warning" id="showBtn3">윤정윤</button> 
+		<p class="btn btn-warning" id="three"> 수업 잘듣고 취업하기!! <i class="fas fa-coffee"></i></p>
+		<p></p>
+		<button type="button" class="btn btn-danger" id="showBtn4">이재호</button> 
+		<p class="btn btn-danger" id="four"> 빅데이터 분야로 취업 하기!! <i class="fas fa-car"></i></p>
+		<p></p>
+		<button type="button" class="btn btn-light" id="showBtn5">김성진</button> 
+		<p class="btn btn-light" id="five"> 생활습관 개선하기!! / 취업!!<i class="fas fa-bars"></i></p>
+		<p></p>
+		 <script> 
+		 document.querySelector("#showBtn1").addEventListener("click",function(){
+			 var current=document.querySelector("#one").style.display;
+			 if(current=="none"){
+				document.querySelector("#one").style.display="inline";
+			 }else{
+			 document.querySelector("#one").style.display="none";
+			 }
+		  });
+		 document.querySelector("#showBtn2").addEventListener("click",function(){
+			 var current=document.querySelector("#two").style.display;
+			 // 데이터 타입을 지정하지 않는다->포인터에 의해 작동-변수위치와 데이터 위치가 다르다
+			 if(current=="none"){
+				document.querySelector("#two").style.display="inline";
+				//none,inline,block
+			 }else{
+			 document.querySelector("#two").style.display="none";
+			 }
+		  });
+		 document.querySelector("#showBtn3").addEventListener("click",function(){
+			 var current=document.querySelector("#three").style.display;
+			 // 데이터 타입을 지정하지 않는다->포인터에 의해 작동-변수위치와 데이터 위치가 다르다
+			 if(current=="none"){
+				document.querySelector("#three").style.display="inline";
+				//none,inline,block
+			 }else{
+			 document.querySelector("#three").style.display="none";
+			 }
+		  });
+		 document.querySelector("#showBtn4").addEventListener("click",function(){
+			 var current=document.querySelector("#four").style.display;
+			 // 데이터 타입을 지정하지 않는다->포인터에 의해 작동-변수위치와 데이터 위치가 다르다
+			 if(current=="none"){
+				document.querySelector("#four").style.display="inline";
+				//none,inline,block
+			 }else{
+			 document.querySelector("#four").style.display="none";
+			 }
+		  });
+		 document.querySelector("#showBtn5").addEventListener("click",function(){
+			 var current=document.querySelector("#five").style.display;
+			 // 데이터 타입을 지정하지 않는다->포인터에 의해 작동-변수위치와 데이터 위치가 다르다
+			 if(current=="none"){
+				document.querySelector("#five").style.display="inline";
+				//none,inline,block
+			 }else{
+			 document.querySelector("#five").style.display="none";
+			 }
+		  });	  
+		</script>
+	</div>
+
+	<!-- section 5 -->
+	
+	<div id="section5" class="container-fluid bg-danger carousel slide" data-ride="carousel" style="padding-top: 70px; padding-bottom: 70px; height: 200%;">
+		<ul class="carousel-indicators">
+			<li data-target="#section5" data-slide-to="0" class="active"></li>
+			<li data-target="#section5" data-slide-to="1"></li>
+			<li data-target="#section5" data-slide-to="2"></li>
+			<li data-target="#section5" data-slide-to="3"></li>
+			<li data-target="#section5" data-slide-to="4"></li>
+			<li data-target="#section5" data-slide-to="5"></li>
+		  </ul>
+		  <div class="carousel-inner">
+			<div class="carousel-item active">
+			   <div class="menu_5">
+			   <br><br><br><br><br><br><br>
+			   <h2 id="title">3조 e-mail</h2>
+			   <br><br><br><br><br><br>
+			   <p id="title">계속하려면 버튼을 클릭하세요</p><br><br><br><br><br><br>
+			   <p id="sul">메뉴 백주현 김성진 안준우 윤정윤 이재호</p>
+			   
+			   </div>
+			</div>
+			<div class="carousel-item" id="email">
+			  <img src="images/email.png" alt="baek">
+			  <div class="carousel-caption">
+				 <h2>백주현</h2>
+				 <p> qorwngus0729@naver.com</p>
+				
+			  </div>   
+			</div>
+			<div class="carousel-item" id="email">
+			  <img class="emailimage" src="images/email.png" alt="kim">
+			  <div class="carousel-caption">
+				 <h2>김성진</h2>
+				 <p>  sou9604@naver.com</p>
+				
+			  </div>   
+			</div>
+			<div class="carousel-item" id="email">
+			  <img class="emailimage" src="images/email.png" alt="ahn">
+			  <div class="carousel-caption">
+				 <h2>안준우</h2>
+				 <p>  sou9604@naver.com</p>
+				
+			  </div>   
+			</div>
+			<div class="carousel-item" id="email">
+			  <img class="emailimage" src="images/email.png" alt="yoon">
+			  <div class="carousel-caption">
+				 <h2>윤정윤</h2>
+				 <p>  ystarjy@naver.com</p>
+				
+			  </div>   
+			</div>
+			<div class="carousel-item" id="email">
+			  <img class="emailimage" src="images/email.png" alt="lee">
+			  <div class="carousel-caption">
+				 <h2>이재호</h2>
+				 <p>   last_kaiz@naver.com</p>
+				
+			  </div>   
+			</div>
+	</div>
+
+
+	<div id="section6" class="container-fluid bg-success" style="padding-top: 70px; padding-bottom: 70px;">
+
+
+
+
+
+	</div>
+	
+</body>
+</html>
+
+

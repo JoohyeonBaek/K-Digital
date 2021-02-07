@@ -1,0 +1,75 @@
+class Student:
+    def __init__(self,num,name,kor,eng,math):
+        self.num = num
+        self.name = name
+        self.kor = kor
+        self.eng = eng
+        self.math = math        
+    
+    def __repr__(self):
+        return "num: %d, name: %s, kor: %d, eng: %d, math: %d" %(self.num, self.name, self.kor, self.eng, self.math)
+    
+    def getSum(self):
+        sum = self.kor + self.eng + self.math
+        return sum
+    
+    def getAverage(self):
+        average = self.sum / 3
+        return average
+    
+    def canAbroad(self):
+        if self.getSum()<180:
+            print("유학불가")
+        else:
+            print("유학가능")
+
+studentArr = []
+
+while(1):
+    num = int(input("메뉴를 선택하세요 1:학생추가 2:학생조회 3:이름변경, 4:점수변경, 5:유학가능여부 확인, 6:종료"))
+    if num==1:
+        snum = int(input("학생 번호 입력: "))
+        name = input("학생 이름 입력: ")
+        kor = int(input("국어 성적 입력: "))
+        eng = int(input("영어 성적 입력: "))
+        math = int(input("수학 성적 입력"))
+        studentArr.append(Student(snum,name,kor,eng,math))
+    
+    elif num==2:
+        snum = int(input("학생 번호를 입력하세요"))
+        for i in studentArr:
+            if i.num == snum:
+                print(i)
+                break
+                
+    elif num==3:
+        snum = int(input("학생 번호를 입력하세요"))
+        for i in studentArr:
+            if i.num == snum:
+                newname = input("변경하고자 하는 이름을 입력하세요")
+                i.name = newname
+                break
+    
+    elif num==4:
+        snum = int(input("학생 번호를 입력하세요"))
+        for i in studentArr:
+            if i.num == snum:
+                newsubject = int(input("변경하고자 하는 과목을 입력하세요 (1:국어 2:영어, 3:수학)"))
+                newscore = int(input("변경하고자 하는 점수를 입력하세요"))
+                if newsubject==1:
+                    i.kor = newscore
+                elif newsubject==2:
+                    i.eng = newscore
+                else:
+                    i.math = newscore
+                break
+    
+    elif num==5:
+        snum = int(input("학생 번호를 입력하세요"))
+        for i in studentArr:
+            if i.num == snum:
+                i.canAbroad()
+                break
+                
+    elif num==6:
+        break

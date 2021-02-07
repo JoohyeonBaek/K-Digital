@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Bootstrap Example</title>
+  <meta charset="EUC-KR">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous"></head>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+  <link rel="stylesheet" href="/resources/demos/style.css">
+  <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+  <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+  <script>
+  $( function() {
+    $( "#tabs" ).tabs();
+  } );
+  </script>
+  <style>
+  #one{
+     display:none;
+  }
+  #two{
+     display:none;
+  }
+  #three{
+     display:none;
+  }
+  #four{
+     display:none;
+  }
+  #five{
+     display:none;
+  }
+  body {
+      position: relative; 
+  }
+  </style>
+</head>
+<body data-spy="scroll" data-target=".navbar" data-offset="50">
+<div class="container"> 
+<nav class="navbar navbar-expand-sm bg-dark navbar-dark fixed-top">  
+  <ul class="navbar-nav">
+    <li class="nav-item">
+      <a class="nav-link" href="#section1">Section 1</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" href="#section2">Section 2</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" href="#section3">Section 3</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" href="#section4">Section 4</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" href="#section5">김성진</a>
+    </li>
+  </ul>
+</nav>
+
+<div id="section1" class="container-fluid bg-success" style="padding-top:70px;padding-bottom:70px">
+  <h1>Section 1</h1>
+  <p>Try to scroll this section and look at the navigation bar while scrolling! Try to scroll this section and look at the navigation bar while scrolling!</p>
+  <p>Try to scroll this section and look at the navigation bar while scrolling! Try to scroll this section and look at the navigation bar while scrolling!</p>
+</div>
+<div id="section2" class="container-fluid bg-warning" style="padding-top:70px;padding-bottom:70px">
+  <h1>Section 2</h1>
+  <p>Try to scroll this section and look at the navigation bar while scrolling! Try to scroll this section and look at the navigation bar while scrolling!</p>
+  <p>Try to scroll this section and look at the navigation bar while scrolling! Try to scroll this section and look at the navigation bar while scrolling!</p>
+</div>
+<div id="section3" class="container-fluid bg-secondary" style="padding-top:70px;padding-bottom:70px">
+  <h1>Section 3</h1>
+  <p>Try to scroll this section and look at the navigation bar while scrolling! Try to scroll this section and look at the navigation bar while scrolling!</p>
+  <p>Try to scroll this section and look at the navigation bar while scrolling! Try to scroll this section and look at the navigation bar while scrolling!</p>
+</div>
+<div id="section4" class="container-fluid bg-danger" style="padding-top:70px;padding-bottom:70px">
+  <h1>Section 4</h1>
+  <p>Try to scroll this section and look at the navigation bar while scrolling! Try to scroll this section and look at the navigation bar while scrolling!</p>
+  <p>Try to scroll this section and look at the navigation bar while scrolling! Try to scroll this section and look at the navigation bar while scrolling!</p>
+</div>
+
+<div id="section5" class="container-fluid bg-info" style="padding-top:70px;padding-bottom:70px">
+  <script>
+  $(function(){
+     $("p5").click(function() {
+        $("div" ).effect( "bounce", "slow" );
+      });
+     $("#kim").click(function(){
+        $("h5").slideToggle()             
+     });
+  })
+  
+  </script>
+  <h5>김성진<i class="fas fa-heart"></i></h5>
+  <div id="tabs">
+  <ul>
+    <li><a href="#tabs-1">기계공학과</a></li>
+    <li><a href="#tabs-2">취미</a></li>
+  </ul>
+  <div id="tabs-1">
+    <p>기계공학은 모든 공학분야가 집결되어 인간의 생활에 편리함을 주는 설비와 기계장치를 개발하는 학문이므로 모든 산업의 기초가 되는 동시에 첨단 분야를 선도해 가고 있습니다. 따라서, 공학 중의 공학이라고 불리기도 하며, 기계공학의 대상은 구체적이고 목표 지향적이므로 그 이론과 적용방법이 시류에 흔들리지 않고 굳건합니다. 최근의 첨단산업을 선도해 가는 모든 분야의 기초학문이 기계공학이라는 것이 이를 입증합니다.</p>
+  </div>
+  <div id="tabs-2">    
+    <p5>취미는 게임 <---클릭</p5>
+    <br/>
+    <img id="kim" src="../images/lostark.jpg" alt="이미지 없음" />
+  </div>
+</div>
+</div>
+</div>
+
+</body>
+</html>

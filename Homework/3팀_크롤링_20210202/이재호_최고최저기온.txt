@@ -1,0 +1,32 @@
+import datetime
+import selenium
+from selenium import webdriver
+from selenium.webdriver import ActionChains
+from selenium.webdriver.common.keys import Keys
+from selenium.webdriver.common.by import By
+from selenium.webdriver.support import expected_conditions as EC
+from selenium.webdriver.support.ui import Select
+from selenium.webdriver.support.ui import WebDriverWait
+from bs4 import BeautifulSoup
+
+URL = 'https://www.weather.go.kr/w/weather/today.do'
+driver = webdriver.Chrome('C:/drivers/chromedriver')
+driver.get(url=URL)
+
+a = driver.find_element_by_xpath('//*[@id="today-vshortmid"]/div[2]/div/div[2]/table/tbody/tr[1]/td[1]').text
+
+temp_min = []
+temp_max = []
+for i in range(1, 6):
+    a = driver.find_element_by_xpath('//*[@id="today-vshortmid"]/div[2]/div/div[2]/table/tbody/tr[1]/td[%s]' %(i)).text
+    b = driver.find_element_by_xpath('//*[@id="today-vshortmid"]/div[2]/div/div[2]/table/tbody/tr[2]/td[%s]' %(i)).text
+    temp_min.append(a)
+    temp_max.append(b)
+
+temp_str = ['평년(오늘)', '어제', '오늘', '내일', '모레']    
+    
+for j in range(1, 6):
+    print("%s의 예상 최저 기온은 ( %s ) (도)입니다. " %(temp_str[j-1], temp_min[j-1]))
+    print()
+    print("%s의 예상 최고 기온은 ( %s ) (도)입니다. " %(temp_str[j-1], temp_max[j-1]))
+    print()

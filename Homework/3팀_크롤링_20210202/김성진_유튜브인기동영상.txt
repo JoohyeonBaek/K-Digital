@@ -1,0 +1,11 @@
+from  selenium import webdriver
+import time
+from selenium.webdriver.common.keys import Keys
+driver = webdriver.Chrome("C:/drivers/chromedriver")
+driver.maximize_window()
+driver.get('https://www.youtube.com/')
+time.sleep(3)
+search = driver.find_element_by_xpath('//*[@id="search"]')
+search.send_keys('실시간 인기 급상승 동영상')
+time.sleep(3)
+search.send_keys(Keys.ENTER)

@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+<link href="./join.css" type="text/css" rel="stylesheet" />
+<meta charset="UTF-8">
+<title>연도별 교통사고 그래프</title>
+<style>
+html, body{ padding:0; margin:0; font-family:"제주고딕"; }
+
+ul, li{ margin:0; padding:0; list-style:none; }
+input{ border:1px solid #cecece; }
+
+hr{ border:1px solid #e6e6e6; margin:25px 0 25px 0; }
+
+#wrapper{ display:table; width:auto; height:auto; margin:0 auto; margin-top: 8%;}
+
+#top{ width:100%; text-align:center; clear:both; margin:0 0 30px 0; }
+.logo{ width:100%; height:auto; border-bottom:1px solid #e6e6e6; }
+.logo_btm_text{ width:100%; margin:25px 0 0 0; color:#767676; }
+.logo_btm_text ul{ margin-bottom:5px; }
+#content{ width:100%; }
+
+.form_design ul{
+width:100%;
+height:48px;
+}
+
+.form_design li input{ width:130px; height:28px; }
+.form_design li .see{ width:80px; margin:0 0 0 10px; background-color:#999999; color:#fff; clear:both; }
+.form_design li .search{ width:100px; margin:0 0 0 10px; background-color:#999999; color:#fff; clear:both; }
+
+
+
+
+</style>
+</head>
+<body>
+<center>
+<div id="wrapper">
+<div id="top">
+<div class="logo"><img src="images/accident.png" width="310" height="180" /></div>
+<div class="logo_btm_text">
+      <ul><h1>연도별 교통사고 그래프</h1></ul>
+      <ul><font size="5">2000~2019</font></ul>
+   </div>
+</div>
+
+<div id="content">
+   <form class = "form_design" method="post" action="allAccidentProcess">
+   <hr />
+      <ul>
+         <li><font size="4">전체 사고량 그래프<input type="submit" name="accident" value="보기" class="see"></font></li>
+      </ul>
+   </form>
+   
+   <form class = "form_design" method="get" action="allDeathProcess">
+      <ul>   
+         <li><font size="4">전체 사망자 그래프<input type="submit" name="death" value="보기" class="see"></font></li>
+      </ul>
+   </form>
+      
+   <form class = "form_design" method="post" action="yearAccidentProcess">   
+      <ul>   
+         <li><font size="4">특정 연도 사고량&nbsp;&nbsp;<input type="text" name="year"><input type="submit" name="year" value="찾아보기" class="search"></font></li>
+      </ul>
+   </form>
+</div>
+</center>
+</body>
+</html>

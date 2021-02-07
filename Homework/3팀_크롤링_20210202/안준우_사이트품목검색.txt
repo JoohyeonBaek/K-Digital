@@ -1,0 +1,9 @@
+from selenium import webdriver
+from bs4 import BeautifulSoup
+driver = webdriver.Chrome('C:/drivers/chromedriver.exe')
+driver.maximize_window()
+driver.get('https://www.kasina.co.kr/main/index.php')
+driver.refresh()
+driver.find_element_by_class_name('ybtn').click()
+driver.find_element_by_id('search_form').send_keys('nike',Keys.ENTER)
+html=driver.page_source

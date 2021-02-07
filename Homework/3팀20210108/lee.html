@@ -1,0 +1,371 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+  <title>Bootstrap Example</title>
+  <meta charset="utf-8">
+
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  <script src="//amcharts.com/lib/4/core.js"></script>
+  <script src="//amcharts.com/lib/4/charts.js"></script>
+  
+<script>
+$(document).ready(function(){
+  $("#hide").click(function(){
+    $("p").hide();
+  });
+  $("#show").click(function(){
+    $("p").show();
+  });
+});
+</script>
+
+<style>
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+}
+
+#chartdiv {
+  width: 100%;
+  height: 300px;
+}
+
+  div.container {
+        width: 80%;
+  }
+
+  
+  body {
+      position: relative; 
+  }
+  #myprofile{
+        border: 2px solid black;
+        height: 100px;
+        width: 100px;
+  }
+  #mymajor{
+        border: 2px solid black;
+        height: 100px;
+        width: 100px;
+  }
+  #mydream{
+        border: 2px solid black;
+        height: 100px;
+        width: 100px;
+  }
+  </style>
+</head>
+<body data-spy="scroll" data-target=".navbar" data-offset="50">
+
+<nav class="navbar navbar-expand-sm bg-dark navbar-dark fixed-top">  
+  <ul class="navbar-nav">
+    <li class="nav-item">
+      <a class="nav-link" href="#section1">Section 1</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" href="#section2">Section 2</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" href="#section3">Section 3</a>
+    </li>
+    <li class="nav-item dropdown">
+      <a class="nav-link dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown">
+        Section 4
+      </a>
+      <div class="dropdown-menu">
+        <a class="dropdown-item" href="#section41">Link 1</a>
+        <a class="dropdown-item" href="#section42">Link 2</a>
+      </div>
+    </li>
+  </ul>
+</nav>
+
+<div id="section1" class="container-fluid bg-success" style="padding-top:70px;padding-bottom:70px">
+  <h1>Section 1</h1>
+  <p>Try to scroll this section and look at the navigation bar while scrolling! Try to scroll this section and look at the navigation bar while scrolling!</p>
+  <p>Try to scroll this section and look at the navigation bar while scrolling! Try to scroll this section and look at the navigation bar while scrolling!</p>
+</div>
+<div id="section2" class="container-fluid bg-warning" style="padding-top:70px;padding-bottom:70px">
+  <h1>Section 2</h1>
+  <p>Try to scroll this section and look at the navigation bar while scrolling! Try to scroll this section and look at the navigation bar while scrolling!</p>
+  <p>Try to scroll this section and look at the navigation bar while scrolling! Try to scroll this section and look at the navigation bar while scrolling!</p>
+</div>
+<div id="section3" class="container-fluid bg-secondary" style="padding-top:70px;padding-bottom:70px">
+  <h1>Section 3</h1>
+  <p>Try to scroll this section and look at the navigation bar while scrolling! Try to scroll this section and look at the navigation bar while scrolling!</p>
+  <p>Try to scroll this section and look at the navigation bar while scrolling! Try to scroll this section and look at the navigation bar while scrolling!</p>
+</div>
+<div id="section41" class="container-fluid bg-danger" style="padding-top:70px;padding-bottom:70px">
+  <h1>Section 4 Submenu 1</h1>
+  <p>Try to scroll this section and look at the navigation bar while scrolling! Try to scroll this section and look at the navigation bar while scrolling!</p>
+  <p>Try to scroll this section and look at the navigation bar while scrolling! Try to scroll this section and look at the navigation bar while scrolling!</p>
+</div>
+<div id="section42" class="container-fluid bg-info" style="padding-top:70px;padding-bottom:70px">
+  <h1>Section 4 Submenu 2</h1>
+  <p>Try to scroll this section and look at the navigation bar while scrolling! Try to scroll this section and look at the navigation bar while scrolling!</p>
+  <p>Try to scroll this section and look at the navigation bar while scrolling! Try to scroll this section and look at the navigation bar while scrolling!</p>
+</div>
+
+
+
+
+
+
+<div id="section43" class="container-fluid bg-light" style="padding-top:150px; padding-bottom:150px;" >
+     <table id="profile">
+        <tr>
+           <td>
+           <div class="card" style="width:300px; position: relative; left: 100px;">
+              <p>　　　　　Introduce Myself</p>
+              <img class="card-img-top" src="images/face.jpg" alt="Card image" style="width:100%">
+              <div class="card-body">
+              <h4 class="card-title">이재호</h4>
+                  <p class="card-text"></p>
+                  <p>선문대학교</p>
+                  <p>2015225224</p>
+                  <button id="W1" type="button1" class="btn btn-secondary">보기</button>
+                  <button id="F1" type="button1" class="btn btn-secondary">닫기</button>
+              </div>
+           </div>
+           </td>
+           <td>
+           <div class="card" style="width:300px; position: relative; left:280px;">
+              <p>　　　　　　　My Major</p>
+              <img class="card-img-top" src="images/display.png" alt="Card image" style="width:100%">
+              <div class="card-body">
+              <h4 class="card-title">반도체 디스플레이 학과</h4>
+                  <p class="card-text"></p>
+                  <p>TV, 반도체, 모니터</p>
+                  <button id="W2" type="button3" class="btn btn-secondary">보기</button>
+                  <button id="F2" type="button3" class="btn btn-secondary">닫기</button>
+              </div>
+           </div>
+           </td>
+           <td>
+           <div class="card" style="width:300px; position: relative; left:515px;">
+              <p>　　　　　　　Dream</p>
+              <img class="card-img-top" src="images/bigdata.jpg" alt="Card image" style="width:100%">
+              <div class="card-body">
+              <h4 class="card-title">빅데이터</h4>
+                  <p class="card-text"></p>
+                  <p>인공지능, 빅데이터 분석</p>
+                  <button id="W3" type="button3" class="btn btn-secondary">보기</button>
+                  <button id="F3" type="button3" class="btn btn-secondary">닫기</button>
+              </div>
+           </div>
+           </td>
+        </tr>
+        <tr>
+           <td>
+              <div id="myprofile" style="width:300px; position: relative; left: 100px;">><p> 선문대 26살 이재호입니다. </p></div>
+           </td>
+           <td>
+              <div id="mymajor1" style="width:300px; position: relative; left: 280px;">><p> 저희 학과는 반도체 디스플레이 학과입니다. </p></div>
+              <div id="mymajor2" style="width:300px; position: relative; left: 280px;">><p> 반도체를 통해 디스플레이를 구현하는 원리를 배웁니다.</p></div>
+              <img id="mymajor3" src="images/semiconductor.jpg" />
+              <img id="mymajor4" src="images/display.png" />
+           </td>
+           <td>
+              <div id="mydream" style="width:300px; position: relative; left: 515px;">><p>이러한 반도체 기술에 빅데이터를 접목시켜 .. </p></div>
+           </td>
+        </tr>
+     </table>
+</div>
+    <script>
+
+$(document).ready(function(){
+      $("#myprofile").hide();
+     $("#W1").click(function(){
+      $("#myprofile").show(); 
+     });
+     $("#F1").click(function(){
+        $("#myprofile").hide();
+     });
+   });
+$(document).ready(function(){
+   $("#mymajor1").hide();
+   $("#mymajor2").hide();
+   $("#mymajor3").hide();
+   $("#mymajor4").hide();
+  $("#W2").click(function(){
+   $("#mymajor1").show(); 
+   $("#mymajor2").show(); 
+   $("#mymajor3").show(); 
+   $("#mymajor4").show(); 
+  });
+  $("#F2").click(function(){
+     $("#mymajor1").hide();
+      $("#mymajor2").hide();
+      $("#mymajor3").hide();
+      $("#mymajor4").hide();
+  });
+});
+$(document).ready(function(){
+   $("#mydream").hide();
+  $("#W3").click(function(){
+   $("#mydream").show(); 
+  });
+  $("#F3").click(function(){
+     $("#mydream").hide();
+  });
+});
+
+ </script>
+ <script>
+    $(document).ready(function() {
+    var table = $('#example').DataTable({
+        columnDefs: [{
+            orderable: false,
+            targets: [1,2,3]
+        }]
+    });
+ 
+    $('button').click( function() {
+        var data = table.$('input, select').serialize();
+        alert(
+            "The following data would have been submitted to the server: \n\n"+
+            data.substr( 0, 120 )+'...'
+        );
+        return false;
+    } );
+} );
+</script>
+<table id="example" class="display" style="width:100%">
+        <thead>
+            <tr>
+                <th>이름</th>
+                <th>나이</th>
+                <th>전공</th>
+                <th>점수</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>백주현</td>
+                <td><input type="text" id="row-1-age" name="row-1-age" value="26"></td>
+                <td><input type="text" id="row-1-position" name="row-1-position" value="컴퓨터 공학과"></td>
+                <td><select size="1" id="row-1-office" name="row-1-office">
+                    <option value="A" selected="selected">
+                        A
+                    </option>
+                    <option value="B">
+                        B
+                    </option>
+                    <option value="C">
+                        C
+                    </option>
+                    <option value="D">
+                        D
+                    </option>
+                    <option value="E">
+                        E
+                    </option>
+                </select></td>
+            </tr>
+            <tr>
+                <td>안준우</td>
+                <td><input type="text" id="row-2-age" name="row-2-age" value="26"></td>
+                <td><input type="text" id="row-2-position" name="row-2-position" value="기계공학과"></td>
+                <td><select size="1" id="row-2-office" name="row-2-office">
+                    <option value="A" selected="selected">
+                        A
+                    </option>
+                    <option value="B">
+                        B
+                    </option>
+                    <option value="C">
+                        C
+                    </option>
+                    <option value="D">
+                        D
+                    </option>
+                    <option value="E">
+                        E
+                    </option>
+                </select></td>
+            </tr>
+            <tr>
+                <td>김성진</td>
+                <td><input type="text" id="row-3-age" name="row-3-age" value="26"></td>
+                <td><input type="text" id="row-3-position" name="row-3-position" value="기계공학과"></td>
+                <td><select size="1" id="row-3-office" name="row-3-office">
+                    <option value="A" selected="selected">
+                        A
+                    </option>
+                    <option value="B">
+                        B
+                    </option>
+                    <option value="C">
+                        C
+                    </option>
+                    <option value="D">
+                        D
+                    </option>
+                    <option value="E">
+                        E
+                    </option>
+                </select></td>
+            </tr>
+            <tr>
+                <td>윤정윤</td>
+                <td><input type="text" id="row-4-age" name="row-4-age" value="24"></td>
+                <td><input type="text" id="row-4-position" name="row-4-position" value="역사문화콘텐츠학과"></td>
+                <td><select size="1" id="row-4-office" name="row-4-office">
+                    <option value="A" selected="selected">
+                        A
+                    </option>
+                    <option value="B">
+                        B
+                    </option>
+                    <option value="C">
+                        C
+                    </option>
+                    <option value="D">
+                        D
+                    </option>
+                    <option value="E">
+                        E
+                    </option>
+                </select></td>
+            </tr>
+            <tr>
+                <td>이재호</td>
+                <td><input type="text" id="row-4-age" name="row-4-age" value="26"></td>
+                <td><input type="text" id="row-4-position" name="row-4-position" value="반도체 디스플레이학과"></td>
+                <td><select size="1" id="row-4-office" name="row-4-office">
+                    <option value="A" selected="selected">
+                        A
+                    </option>
+                    <option value="B">
+                        B
+                    </option>
+                    <option value="C">
+                        C
+                    </option>
+                    <option value="D">
+                        D
+                    </option>
+                    <option value="E">
+                        E
+                    </option>
+                </select></td>
+            </tr>
+        </tbody>
+        <tfoot>
+            <tr>
+                <th>Name</th>
+                <th>Age</th>
+                <th>major</th>
+                <th>score</th>
+            </tr>
+        </tfoot>
+    </table>
+    
+
+
+</body>
+</html>

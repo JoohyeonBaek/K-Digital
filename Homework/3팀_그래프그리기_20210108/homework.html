@@ -1,0 +1,412 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <title>3팀_그래프그리기_20210110</title>
+    <style>
+      #chartdiv3 {
+        width: 100%;
+        height: 500px;
+      }  
+    </style>
+
+    <script src="https://cdn.amcharts.com/lib/4/core.js"></script>
+    <script src="https://cdn.amcharts.com/lib/4/charts.js"></script>
+    <script src="https://cdn.amcharts.com/lib/4/themes/animated.js"></script>
+
+    <script>
+      am4core.ready(function() {  
+      
+      am4core.useTheme(am4themes_animated);  
+      
+      var chart = am4core.create("chartdiv3", am4charts.XYChart);
+      chart.padding(40, 40, 40, 40);
+      
+      var categoryAxis = chart.yAxes.push(new am4charts.CategoryAxis());
+      categoryAxis.renderer.grid.template.location = 0;
+      categoryAxis.dataFields.category = "first_name";
+      categoryAxis.renderer.minGridDistance = 1;
+      categoryAxis.renderer.inversed = true;
+      categoryAxis.renderer.grid.template.disabled = true;
+      
+      var valueAxis = chart.xAxes.push(new am4charts.ValueAxis());
+      valueAxis.min = 0;
+      
+      var series = chart.series.push(new am4charts.ColumnSeries());
+      series.dataFields.categoryY = "first_name";
+      series.dataFields.valueX = "population";
+      series.tooltipText = "{valueX.value}"
+      series.columns.template.strokeOpacity = 0;
+      series.columns.template.column.cornerRadiusBottomRight = 5;
+      series.columns.template.column.cornerRadiusTopRight = 5;
+      
+      var labelBullet = series.bullets.push(new am4charts.LabelBullet())
+      labelBullet.label.horizontalCenter = "left";
+      labelBullet.label.dx = 10;
+      labelBullet.label.text = "{values.valueX.workingValue.formatNumber('#.0as')}";
+      labelBullet.locationX = 1;  
+      
+      series.columns.template.adapter.add("fill", function(fill, target){
+        return chart.colors.getIndex(target.dataItem.index);
+      });
+      
+      categoryAxis.sortBySeries = series;
+      chart.data = [
+          {
+            "first_name": "김",
+            "population": 10689959
+          },
+    
+          {
+            "first_name": "이",
+            "population": 7306828
+          },
+    
+          {
+            "first_name": "박",
+            "population": 4192074
+          },
+    
+          {
+            "first_name": "최",
+            "population": 2333927
+          },
+    
+          {
+            "first_name": "정",
+            "population": 2151879
+          },
+    
+          {
+            "first_name": "강",
+            "population": 1176847
+          },
+    
+          {
+            "first_name": "조",
+            "population": 1055567
+          },
+    
+          {
+            "first_name": "윤",
+            "population": 1020547
+          },
+    
+          {
+            "first_name": "장",
+            "population": 992721
+          },
+    
+          {
+            "first_name": "임",
+            "population": 823921
+          },
+    
+          {
+            "first_name": "한",
+            "population": 773404
+          },
+    
+          {
+            "first_name": "오",
+            "population": 763281
+          },
+    
+          {
+            "first_name": "서",
+            "population": 751704
+          },
+    
+          {
+            "first_name": "신",
+            "population": 741081
+          },
+    
+          {
+            "first_name": "권",
+            "population": 705941
+          },
+    
+          {
+            "first_name": "황",
+            "population": 697171
+          },
+    
+          {
+            "first_name": "안",
+            "population": 685639
+          },
+    
+          {
+            "first_name": "송",
+            "population": 683494
+          },
+    
+          {
+            "first_name": "전",
+            "population": 559110
+          },
+    
+          {
+            "first_name": "홍",
+            "population": 558853
+          }
+        ]  
+      
+      });
+      </script>
+  </head>
+  <body>
+    <div>
+    <h1 style="text-align: center;">한국 성씨 인구수</h1>
+    <h2>백주현</h2>
+    <div id="chartdiv3"></div>    
+    <table class="table">
+      <thead class="thead-dark">
+        <tr>
+          <th>성씨</th>
+          <th>인구수</th>          
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>김</td>
+          <td>10,689,959</td>
+          
+        </tr>
+
+        <tr>
+          <td>이</td>
+          <td>7,306,828</td>
+          
+        </tr>
+
+        <tr>
+          <td>박</td>
+          <td>4,192,074</td>          
+        </tr>
+
+        <tr>
+          <td>최</td>
+          <td>2,333,927</td>          
+        </tr>
+
+        <tr>
+          <td>정</td>
+          <td>2,151,879</td>          
+        </tr>
+
+        <tr>
+          <td>강</td>
+          <td>1,176,847</td>          
+        </tr>
+
+        <tr>
+          <td>조</td>
+          <td>1,055,567</td>          
+        </tr>
+
+        <tr>
+          <td>윤</td>
+          <td>1,020,547</td>          
+        </tr>
+
+        <tr>
+          <td>장</td>
+          <td>992,721</td>          
+        </tr>
+
+        <tr>
+          <td>임</td>
+          <td>823,921</td>          
+        </tr>
+
+        <tr>
+          <td>한</td>
+          <td>773,404</td>          
+        </tr>
+
+        <tr>
+          <td>오</td>
+          <td>763,281</td>          
+        </tr>
+
+        <tr>
+          <td>서</td>
+          <td>751,704</td>          
+        </tr>
+
+        <tr>
+          <td>신</td>
+          <td>741,081</td>          
+        </tr>
+
+        <tr>
+          <td>권</td>
+          <td>705,941</td>          
+        </tr>
+
+        <tr>
+          <td>황</td>
+          <td>697,171</td>          
+        </tr>
+
+        <tr>
+          <td>안</td>
+          <td>685,639</td>          
+        </tr>
+
+        <tr>
+          <td>송</td>
+          <td>683,494</td>          
+        </tr>
+
+        <tr>
+          <td>전</td>
+          <td>559,110</td>          
+        </tr>
+
+        <tr>
+          <td>홍</td>
+          <td>558,853</td>          
+        </tr>
+      </tbody>
+    </table>
+    </div>
+
+    <script>
+
+      var add=function(){
+      am4core.ready(function() {
+      
+      am4core.useTheme(am4themes_animated);
+      
+      var chart = am4core.create("chartdiv4", am4charts.XYChart);
+      
+      var Xval = parseFloat(document.querySelector("#Xval").value);
+      var Y1val = parseFloat(document.querySelector("#Y1val").value);
+      var Y2val = parseFloat(document.querySelector("#Y2val").value);
+      var CY1val = parseFloat(document.querySelector("#CY1val").value);
+      var CY2val = parseFloat(document.querySelector("#CY2val").value);
+      var Data1 = {"x":Xval, "ay":Y1val, "by":Y2val, "aValue":CY1val, "bValue":CY2val};
+      
+      var Xval2 = parseFloat(document.querySelector("#Xval2").value);
+      var Y1val2 = parseFloat(document.querySelector("#Y1val2").value);
+      var Y2val2 = parseFloat(document.querySelector("#Y2val2").value);
+      var CY1val2 = parseFloat(document.querySelector("#CY1val2").value);
+      var CY2val2 = parseFloat(document.querySelector("#CY2val2").value);
+      var Data2 = {"x":Xval2, "ay":Y1val2, "by":Y2val2, "aValue":CY1val2, "bValue":CY2val2};
+      
+      var Xval3 = parseFloat(document.querySelector("#Xval3").value);
+      var Y1val3 = parseFloat(document.querySelector("#Y1val3").value);
+      var Y2val3 = parseFloat(document.querySelector("#Y2val3").value);
+      var CY1val3 = parseFloat(document.querySelector("#CY1val3").value);
+      var CY2val3 = parseFloat(document.querySelector("#CY2val3").value);
+      var Data3 = {"x":Xval3, "ay":Y1val3, "by":Y2val3, "aValue":CY1val3, "bValue":CY2val3};
+      
+      var Xva4 = parseFloat(document.querySelector("#Xval4").value);
+      var Y1va4 = parseFloat(document.querySelector("#Y1val4").value);
+      var Y2va4 = parseFloat(document.querySelector("#Y2val4").value);
+      var CY1val4 = parseFloat(document.querySelector("#CY1val4").value);
+      var CY2val4 = parseFloat(document.querySelector("#CY2val4").value);
+      var Data4 = {"x":Xval4, "ay":Y1val4, "by":Y2val4, "aValue":CY1val4, "bValue":CY2val4};
+      
+      var Xval5 = parseFloat(document.querySelector("#Xval5").value);
+      var Y1val5 = parseFloat(document.querySelector("#Y1val5").value);
+      var Y2val5 = parseFloat(document.querySelector("#Y2val5").value);
+      var CY1val5 = parseFloat(document.querySelector("#CY1val5").value);
+      var CY2val5 = parseFloat(document.querySelector("#CY2val5").value);
+      var Data5 = {"x":Xval5, "ay":Y1val5, "by":Y2val5, "aValue":CY1val5, "bValue":CY2val5};
+      
+      chart.data = [];
+      chart.data.push(Data1);
+      if(Data2.x > Data1.x) {
+          chart.data.push(Data2);
+      }
+      
+      if(Data3.x > Data2.x) {
+          chart.data.push(Data3);
+      }
+      
+      if(Data4.x > Data3.x) {
+          chart.data.push(Data4);
+      }
+      
+      if(Data5.x > Data4.x) {
+          chart.data.push(Data5);
+      }
+      
+      
+      
+         
+      // Create axes
+      var xAxis = chart.xAxes.push(new am4charts.ValueAxis());
+          xAxis.renderer.minGridDistance = 40;
+          
+          // Create value axis
+          var yAxis = chart.yAxes.push(new am4charts.ValueAxis());
+          
+          // Create series
+          var series1 = chart.series.push(new am4charts.LineSeries());
+          series1.dataFields.valueX = "x";
+          series1.dataFields.valueY = "ay";
+          series1.dataFields.value = "aValue";
+          series1.strokeWidth = 2;
+          
+          var bullet1 = series1.bullets.push(new am4charts.CircleBullet());
+          series1.heatRules.push({
+            target: bullet1.circle,
+            min: 5,
+            max: 20,
+            property: "radius"
+          });
+          
+          bullet1.tooltipText = "{valueX} x {valueY}: [bold]{value}[/]";
+          
+          var series2 = chart.series.push(new am4charts.LineSeries());
+          series2.dataFields.valueX = "x";
+          series2.dataFields.valueY = "by";
+          series2.dataFields.value = "bValue";
+          series2.strokeWidth = 2;
+          
+          var bullet2 = series2.bullets.push(new am4charts.CircleBullet());
+          series2.heatRules.push({
+            target: bullet2.circle,
+            min: 5,
+            max: 20,
+            property: "radius"
+          });
+          
+          bullet2.tooltipText = "{valueX} x {valueY}: [bold]{value}[/]";
+          
+          //scrollbars
+          chart.scrollbarX = new am4core.Scrollbar();
+          chart.scrollbarY = new am4core.Scrollbar();
+          
+          }); // end am4core.ready()
+      
+      
+      
+      };
+      </script>
+
+
+    
+    
+  </body>
+</html>
+
+
+  
+  
+  
+  
+  
+    
+
+  

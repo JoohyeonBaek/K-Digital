@@ -1,0 +1,18 @@
+from selenium import webdriver
+import time
+from selenium.webdriver.common.keys import Keys
+
+driver = webdriver.Chrome('C:/drivers/chromedriver')
+driver.maximize_window()
+driver.get("https://lms.sunmoon.ac.kr/ilos/main/member/login_form.acl")
+driver.implicitly_wait(3)
+driver.find_element_by_name('usr_id').send_keys('qorwngus0729')
+driver.find_element_by_name('usr_pwd').send_keys('1q2w3e4r%t')
+driver.find_element_by_xpath('//*[@id="myform"]/div/div/div/fieldset/input[3]').click()
+time.sleep(5)
+driver.find_element_by_class_name('header_logout').click()
+time.sleep(5)
+
+
+
+print("success")

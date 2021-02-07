@@ -1,0 +1,74 @@
+{% extends "base.html" %}
+{% block header %}
+
+{% endblock header %}
+
+{% block explain_contents %}
+<style>
+    table {
+        text-align: center
+    }
+
+
+</style>
+
+<center>
+    <h1> User Table</h1>
+    <table class="table">
+        <thead>
+        <tr>
+            <th>userID</th>
+            <th>이름</th>
+            <th>출생년도</th>
+            <th>주소</th>
+            <th>연락처1</th>
+            <th>연락처2</th>
+            <th>키</th>
+            <th>가입일</th>
+        </tr>
+        </thead>
+        <tbody>
+        {% for user in object_list %}
+        <tr>
+            <td>{{user[0]}}</td>
+            <td>{{user[1]}}</td>
+            <td>{{user[2]}}</td>
+            <td>{{user[3]}}</td>
+            <td>{{user[4]}}</td>
+            <td>{{user[5]}}</td>
+            <td>{{user[6]}}</td>
+            <td>{{user[7]}}</td>
+        </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+    <br><br>
+    <h1> Product Table</h1>
+    <table class="table">
+        <thead>
+        <tr>
+            <th>번호</th>
+            <th>userID</th>
+            <th>제품명</th>
+            <th>제품그룹</th>
+            <th>가격</th>
+            <th>수량</th>
+        </tr>
+        </thead>
+        <tbody>
+        {% for product in object_list2 %}
+        <tr>
+            <td>{{product[0]}}</td>
+            <td>{{product[1]}}</td>
+            <td>{{product[2]}}</td>
+            <td>{{product[3]}}</td>
+            <td>{{product[4]}}</td>
+            <td>{{product[5]}}</td>
+        </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+</center>
+
+
+{% endblock explain_contents %}

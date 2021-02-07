@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="html">
+<title>Insert title here</title>
+
+<style>
+#chartdiv4 {
+  width: 100%;
+  height: 500px;
+}
+</style>
+
+<!-- Resources -->
+<script src="https://cdn.amcharts.com/lib/4/core.js"></script>
+<script src="https://cdn.amcharts.com/lib/4/charts.js"></script>
+<script src="https://cdn.amcharts.com/lib/4/themes/animated.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+<!-- Chart code -->
+<script>
+
+var add=function(){
+am4core.ready(function() {
+
+am4core.useTheme(am4themes_animated);
+
+var chart = am4core.create("chartdiv4", am4charts.XYChart);
+
+var Xval = parseFloat(document.querySelector("#Xval").value);
+var Y1val = parseFloat(document.querySelector("#Y1val").value);
+var Y2val = parseFloat(document.querySelector("#Y2val").value);
+var CY1val = parseFloat(document.querySelector("#CY1val").value);
+var CY2val = parseFloat(document.querySelector("#CY2val").value);
+var Data1 = {"x":Xval, "ay":Y1val, "by":Y2val, "aValue":CY1val, "bValue":CY2val};
+
+var Xval2 = parseFloat(document.querySelector("#Xval2").value);
+var Y1val2 = parseFloat(document.querySelector("#Y1val2").value);
+var Y2val2 = parseFloat(document.querySelector("#Y2val2").value);
+var CY1val2 = parseFloat(document.querySelector("#CY1val2").value);
+var CY2val2 = parseFloat(document.querySelector("#CY2val2").value);
+var Data2 = {"x":Xval2, "ay":Y1val2, "by":Y2val2, "aValue":CY1val2, "bValue":CY2val2};
+
+var Xval3 = parseFloat(document.querySelector("#Xval3").value);
+var Y1val3 = parseFloat(document.querySelector("#Y1val3").value);
+var Y2val3 = parseFloat(document.querySelector("#Y2val3").value);
+var CY1val3 = parseFloat(document.querySelector("#CY1val3").value);
+var CY2val3 = parseFloat(document.querySelector("#CY2val3").value);
+var Data3 = {"x":Xval3, "ay":Y1val3, "by":Y2val3, "aValue":CY1val3, "bValue":CY2val3};
+
+var Xva4 = parseFloat(document.querySelector("#Xval4").value);
+var Y1va4 = parseFloat(document.querySelector("#Y1val4").value);
+var Y2va4 = parseFloat(document.querySelector("#Y2val4").value);
+var CY1val4 = parseFloat(document.querySelector("#CY1val4").value);
+var CY2val4 = parseFloat(document.querySelector("#CY2val4").value);
+var Data4 = {"x":Xval4, "ay":Y1val4, "by":Y2val4, "aValue":CY1val4, "bValue":CY2val4};
+
+var Xval5 = parseFloat(document.querySelector("#Xval5").value);
+var Y1val5 = parseFloat(document.querySelector("#Y1val5").value);
+var Y2val5 = parseFloat(document.querySelector("#Y2val5").value);
+var CY1val5 = parseFloat(document.querySelector("#CY1val5").value);
+var CY2val5 = parseFloat(document.querySelector("#CY2val5").value);
+var Data5 = {"x":Xval5, "ay":Y1val5, "by":Y2val5, "aValue":CY1val5, "bValue":CY2val5};
+
+chart.data = [];
+chart.data.push(Data1);
+if(Data2.x > Data1.x) {
+    chart.data.push(Data2);
+}
+
+if(Data3.x > Data2.x) {
+    chart.data.push(Data3);
+}
+
+if(Data4.x > Data3.x) {
+    chart.data.push(Data4);
+}
+
+if(Data5.x > Data4.x) {
+    chart.data.push(Data5);
+}
+
+
+
+   
+// Create axes
+var xAxis = chart.xAxes.push(new am4charts.ValueAxis());
+    xAxis.renderer.minGridDistance = 40;
+    
+    // Create value axis
+    var yAxis = chart.yAxes.push(new am4charts.ValueAxis());
+    
+    // Create series
+    var series1 = chart.series.push(new am4charts.LineSeries());
+    series1.dataFields.valueX = "x";
+    series1.dataFields.valueY = "ay";
+    series1.dataFields.value = "aValue";
+    series1.strokeWidth = 2;
+    
+    var bullet1 = series1.bullets.push(new am4charts.CircleBullet());
+    series1.heatRules.push({
+      target: bullet1.circle,
+      min: 5,
+      max: 20,
+      property: "radius"
+    });
+    
+    bullet1.tooltipText = "{valueX} x {valueY}: [bold]{value}[/]";
+    
+    var series2 = chart.series.push(new am4charts.LineSeries());
+    series2.dataFields.valueX = "x";
+    series2.dataFields.valueY = "by";
+    series2.dataFields.value = "bValue";
+    series2.strokeWidth = 2;
+    
+    var bullet2 = series2.bullets.push(new am4charts.CircleBullet());
+    series2.heatRules.push({
+      target: bullet2.circle,
+      min: 5,
+      max: 20,
+      property: "radius"
+    });
+    
+    bullet2.tooltipText = "{valueX} x {valueY}: [bold]{value}[/]";
+    
+    //scrollbars
+    chart.scrollbarX = new am4core.Scrollbar();
+    chart.scrollbarY = new am4core.Scrollbar();
+    
+    }); // end am4core.ready()
+
+
+
+};
+</script>
+
+</head>
+<body>
+
+<div id="chartdiv4"></div>
+
+<div id="insertChart">
+   <table id="tableID">
+      <tr>
+         <th>x좌표</th>
+         <th>그래프1 Y좌표</th>
+         <th>그래프2 Y좌표</th>
+         <th>그래프1 원 크기(1~20)</th>
+         <th>그래프2 원 크기(1~20)</th>         
+      </tr>
+      <tr>
+         <td><input type="text" id="Xval"></td>
+         <td><input type="text" id="Y1val"></td>
+         <td><input type="text" id="Y2val"></td>
+         <td><input type="text" id="CY1val"></td>
+         <td><input type="text" id="CY2val"></td>
+      </tr>
+      <tr>
+         <td><input type="text" id="Xval2"></td>
+         <td><input type="text" id="Y1val2"></td>
+         <td><input type="text" id="Y2val2"></td>
+         <td><input type="text" id="CY1val2"></td>
+         <td><input type="text" id="CY2val2"></td>
+      </tr>
+      <tr>
+         <td><input type="text" id="Xval3"></td>
+         <td><input type="text" id="Y1val3"></td>
+         <td><input type="text" id="Y2val3"></td>
+         <td><input type="text" id="CY1val3"></td>
+         <td><input type="text" id="CY2val3"></td>
+      </tr>
+      <tr>
+         <td><input type="text" id="Xval4"></td>
+         <td><input type="text" id="Y1val4"></td>
+         <td><input type="text" id="Y2val4"></td>
+         <td><input type="text" id="CY1val4"></td>
+         <td><input type="text" id="CY2val4"></td>
+      </tr>
+      <tr>
+         <td><input type="text" id="Xval5"></td>
+         <td><input type="text" id="Y1val5"></td>
+         <td><input type="text" id="Y2val5"></td>
+         <td><input type="text" id="CY1val5"></td>
+         <td><input type="text" id="CY2val5"></td>
+      </tr>
+   </table>
+   <button onclick="add()"> 첫번째 값을 입력하시오.  </button>
+</div>
+
+
+
+</body>
+</html>
