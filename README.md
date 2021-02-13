@@ -13,7 +13,6 @@
   * JavaScript
   * jQuery
   * Servlet
-  * 
 * Python
   * Django
   * Flask
