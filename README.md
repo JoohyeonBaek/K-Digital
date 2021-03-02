@@ -19,7 +19,7 @@
   * Crawling
     * BeautifulSoap
     * Naver Open API
-    * 
+* R 
     
 * Project
   * Public_Toilet
