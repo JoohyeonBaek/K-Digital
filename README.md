@@ -19,6 +19,7 @@
   * Crawling
     * BeautifulSoap
     * Naver Open API
+* 데이터분석
 * R 
     
 * Project
