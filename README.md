@@ -22,5 +22,6 @@
 * 데이터분석
 * R 
 * 기계학습
+* 
 * Project
   * Public_Toilet
