@@ -20,10 +20,21 @@
     * BeautifulSoap
     * Naver Open API
 * 데이터분석
+  * 통계학
+  * 유의성 검정
+  * 회귀분석
+  * 분류
+  * 상관분석
+  * Onehot Encoding
+  * 표본표출
 * R 
-* 기계학습
-  * sklearn 
-* 
+* Machine Learning
+  * 회귀
+  * 군집
+  * 스케일조정
+  * sklearn
+  * kmeans
 * Project
-  * Public_Toilet
+  * 공공데이터를 활용한 공중화장실 안내 서비스
+  * 관광객 데이터를 통한 각종 정보 및 편의기능 제공
 * AWS
