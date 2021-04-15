@@ -35,6 +35,7 @@
   * 스케일조정
   * sklearn
   * kmeans
+  * Tensorflow
 * Project
   * 공공데이터를 활용한 공중화장실 안내 서비스
   * 관광객 데이터를 통한 각종 정보 및 편의기능 제공
